@@ -35,3 +35,10 @@
 - macOS / Linux XeLaTeX 必须使用字体回退，补丁和压缩包必须使用 ASCII 英文文件名。
 - 自动组卷应有固定随机种子、明确数量及缺题报错，题库数不足不得重复或假造题目。
 - 不要自动更改 `draft` 审核等级；新增题目要记录来源授权和课程范围。
+
+
+### V1.4 pre-review ledger
+
+- Any edit to `questions/HSM-*/metadata.yml`, `stem.tex`, `solution.tex`, or `answer.tex` must be followed by updating the corresponding hashes and evidence in `review/v1_4_audit.yml`; `make check` rejects stale reviews.
+- `precheck_consistent` is **not** a human `math_checked` decision. Never promote `review_status` based solely on the preliminary ledger or automatic tests.
+- Treat `review_relation` as canonical mathematical-equivalence/variant metadata, not permission to delete IDs.

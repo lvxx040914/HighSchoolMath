@@ -18,3 +18,6 @@ source:
   citation: V1.0 手写示范题迁移（非新增数学题）
   permission: self_authored
   note: 保留原讲义示范例题内容，未经过独立数学人工审稿。
+review_relation:
+  kind: domain_restriction
+  target: HSM-FUN-0002

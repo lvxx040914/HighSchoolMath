@@ -1,0 +1,574 @@
+version: '1.4'
+scope: monotonicity
+review_type: AI-assisted preliminary mathematical and editorial check, not independent human approval
+baseline: HighSchoolMath V1.3 main (2026-10-20)
+audit_date: '2026-10-20'
+publication_rule: All review_status stay draft. human review, typesetting approval and rights verification required.
+canonical_equivalence_groups:
+- canonical: HSM-FUN-0007
+  members:
+  - HSM-FUN-0007
+  - HSM-FUN-0014
+  - HSM-FUN-0028
+  - HSM-FUN-0038
+  scope: same assertion up to rearrangement or t=x+1
+- canonical: HSM-FUN-0006
+  members:
+  - HSM-FUN-0006
+  - HSM-FUN-0029
+  scope: identical inequality and equality condition
+entries:
+- id: HSM-FUN-0001
+  result: precheck_consistent
+  proof_check: 两点差商分母在 x>-1 时为正，差值为 3(x2-x1)/正数
+  boundary_check: 右开端点 -1 不取到
+  difficulty_after: 2
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 3c87ac58b29069869fbc0a0e55f1a89a9bab5f417420e96266df40e22d531b93
+    stem.tex: e4386496110a4222c1cd3833d96673cee5fe0860f97059d5c65941362b9f81f4
+    solution.tex: d67c04b6b294eabc1bf697d5beeee039527b8e744a356768fc3e679aafad9e45
+    answer.tex: 3add71206b528e9f3d24118f1d1f19c69bb41155340f58c18c793049dd3d48cc
+- id: HSM-FUN-0002
+  result: precheck_consistent
+  proof_check: 导数 2x/(1+x²) 以 x=0 分变号，严格减后增
+  boundary_check: 驻点 0 及闭端点写法
+  difficulty_after: 2
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 46202299a0a1780ffd5a35eaab10218d2b47fbe25fb8d6454a5799ad04a2a6b7
+    stem.tex: 773fa49d5113461e699e8745bdc81c4dc77025a07b4925bfcdf4419a73cceff9
+    solution.tex: 335c1f227f585da98add38a793be5600c54e1f8b3b3cef5d2fcd1532f66a294b
+    answer.tex: cdf9ff28c5eaff96eb772dc11762dd8abbb7ac5b604cc4cea53c2636355f22b6
+- id: HSM-FUN-0003
+  result: precheck_consistent
+  proof_check: 闭区间端点±2与驻点±1的四个函数值均比较
+  boundary_check: 最大值与最小值各有两处取点
+  difficulty_after: 3
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 8dd9d18fcb262118ba0fded5cdb005ea318fea2019a416ea4c8ada4af7c9733a
+    stem.tex: d6196ad7b56cda6ac4a7ad6e808e346d38668b5402557e1eb05e75c5c5701d27
+    solution.tex: 401abe2dd53ea05e00b7ab31322f30e4f73d60363ebbfe612f8133a932bfa454
+    answer.tex: 863220b5ef0edb56ca8cc562425f251040a8837cfc9f441895ee73be2e1b0cff
+- id: HSM-FUN-0004
+  result: precheck_consistent
+  proof_check: 导数 2(x-a) 的零点是否落入 [0,+∞) 决定两类
+  boundary_check: a=0 时端点导数为零仍严格增
+  difficulty_after: 3
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: e61e06efe73d5f3e62157a0ff4ff8f9a441a1cac935cbf6bd19104273de87d89
+    stem.tex: 418acf1607f6bbeda816205dd9670f674b486b3a4d03cf27bb8bfd8be07f646f
+    solution.tex: 405c53b936338101b591639480ca7164a1006ad778bb8e72f2af1f1b0bd674dd
+    answer.tex: 4f5fdc23728b1b9092db71bafd976bb18b300b8d0cbe19f230d46b28d0e54a93
+- id: HSM-FUN-0005
+  result: precheck_consistent
+  proof_check: 1-a/x² 在 a≤0 正；a>0 的近零区间负
+  boundary_check: a=0 和 x→0+
+  difficulty_after: 3
+  difficulty_calibration: 单一导数符号阈值，分类简单
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 68bf745c8e84cf8fc89e8c2ebd72b64db2e992b0142f08ccf22a4f998f63d4c8
+    stem.tex: f281e14d352c033bd0ba5a8e9a5cc8cd39eb835c6debda0d135f8e009456987a
+    solution.tex: b626ece3cd62401b73ba6b5ce922b66726628250db696b61841e98707800793a
+    answer.tex: 1e53a87cd31626b51052a9d78db7c9acb78149fb6be9ae906fb5cff5cf98bc34
+- id: HSM-FUN-0006
+  result: precheck_consistent
+  proof_check: e^x-1 在 x=0 变号使 e^x-x-1 达到全局最小
+  boundary_check: x=0 唯一取等
+  difficulty_after: 3
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 3942f1721a1c5848410cedcc145cbd16eeb7c185646adf349130f7d27f1b582d
+    stem.tex: abb4b7a954205ec045c5ea9f5b981f164c1571bc9449968f81f68ba3eae54469
+    solution.tex: 62c300f626dc8c3d07b48f2557fc8262fe4e773384c65441f71c8d9135dba5a3
+    answer.tex: 8c0692f34a118333b41dd64c6e8b31eaf51e936d17d67af5e01c7464215dd0ac
+- id: HSM-FUN-0007
+  result: precheck_consistent
+  proof_check: x-1-ln x 的导数 (x-1)/x 由负转正
+  boundary_check: x>0、x=1 取等
+  difficulty_after: 3
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 7d4d8194d5d00a623889fc0bffc15c730940814f047f79b922117f27c1eb795b
+    stem.tex: 12d3e23b8cefb7e944ca594ed4c06111855287b539e336118bb3ab51db7cf83d
+    solution.tex: 5f7ed0e698ccede6b8b8a816e3ca5b8384e470e297f02326c7cb6323d12db68b
+    answer.tex: fe2ec3b075c8d9b6743ec66eddb6413bfd00486c3f757a243dfb48897bd5e8e0
+- id: HSM-FUN-0008
+  result: precheck_consistent
+  proof_check: f=x-1+2/(x+1)，最小点 x=√2−1，值 2√2−2
+  boundary_check: x→−1+ 与 +∞ 无极小遗漏
+  difficulty_after: 3
+  difficulty_calibration: 有理式整理加唯一驻点，常规最值
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: a7959d9cbf9aef798931aa5148566982e5e6cbcc726929c5e507f7b70ee69240
+    stem.tex: a50fb74ad8a2219226c73024f1c834fc7796a67f1d1b5b8ccddba7b69e14257f
+    solution.tex: 679c821c74cdcf5cb500ea74b71449dfc5f87a85a0cf8d3b181ee9e0d34bfa63
+    answer.tex: 64676eb4b9cf3f55552bfa17ce6c4ec62dbaeef99459f4fd3b99ba32204e4f64
+- id: HSM-FUN-0009
+  result: precheck_consistent
+  proof_check: 比较平方 1−x² 并应用根函数严格增
+  boundary_check: x=0 与 x=1 都合法
+  difficulty_after: 2
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 195943b3450262a962e2e5dc7e35d66102e8f50820098962067bd7c2682cc437
+    stem.tex: 34f5c6f2c264d53c5b800d9c4df30018f8edd7a5deb4446a7ef5e1ab837b987a
+    solution.tex: e7dbdd2ce81a6a294a427bec9fec3da79028716c6dc1ba3f86bcd059925f434e
+    answer.tex: f3f9fd55f0eeb1080aa0888aaec0a5b66866b1c7c158dce133d6aaa1b2c5dbd9
+- id: HSM-FUN-0010
+  result: precheck_consistent
+  proof_check: a≤0 时函数从−∞增至+∞；a>0 时极大值−ln a−1
+  boundary_check: a=0、a=1/e 以及两端极限
+  difficulty_after: 4
+  difficulty_calibration: 参数分情况、端点极限与根数综合
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: cdc8badfca860fd1b4367aee35db1af978bd9cfe1eedf3d16793b570d606e3e5
+    stem.tex: 75a8f255c9f2ea49eb9f30c9b8ad4edeeb5f3c5d18c9c0c0e8b239651963362e
+    solution.tex: c8075d2150dfee2340cd059641f3dc1299344afe0530ca8dc9badabf1b03bcfb
+    answer.tex: 8d14346f1c0b98a9cc57b55fd0b74beb800b099fcfbb815bb84beead539a3a79
+- id: HSM-FUN-0011
+  result: precheck_consistent
+  proof_check: 差值为 −3(x2−x1)/正数
+  boundary_check: x>2，分母不能为零
+  difficulty_after: 2
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 58c60e10e7168d03a4166392bcb03d099097f0a4f1a20bcfeeaff4a34707924d
+    stem.tex: 0359617d8ab7ccc1be1ff52d6b7e946f10611cd8cb1f6caf940c10243dec3425
+    solution.tex: 4310c7888b44505de204742cab06a5f4d7828a5e159c751e316ef8c3ef0e2387
+    answer.tex: d8d653ec24590b1e3fb0ebdfd2fea53ba6bd4b2bb771f6a44201680171c5601c
+- id: HSM-FUN-0012
+  result: precheck_consistent
+  proof_check: 严格增蕴含内点导数≥0，令 x→1+ 得 a≤1，反向导数正
+  boundary_check: a=1 是可行的临界值
+  difficulty_after: 3
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: afb6e9a818089d20db918d14115868406049c5568f1db2e09c4f246fc7ee67fb
+    stem.tex: 6364c1c2195c8e1f9ad57bf6b9b8d96d39e5d06d7693776b162ac6db33b56a95
+    solution.tex: 560acd179d44d59b4bc4f7198c78ccf4fa63272b3791ad6fe7536f8df1acaefe
+    answer.tex: f6a37120a456f2203c6341057e5da05a1a85e43884144bfac63076d759ed4b33
+- id: HSM-FUN-0013
+  result: precheck_consistent
+  proof_check: 右段严格增要求 a>0，左极限上确界 0 要求 b≥0
+  boundary_check: b=0 时跨点仍严格增，允许跳跃
+  difficulty_after: 4
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 81d269b0af84984f98855462d3d29faae111f6a9b4ab37fe159df622750c7d16
+    stem.tex: bb5fe5740d73c96405ce45ccc44ae7a96fb4b021742097ba6e43fbd7b4b2c818
+    solution.tex: baa08eb91e11b4fff6e1da4fc40117ddee8fbd4de9a581215a99db2841864bed
+    answer.tex: 963eb80e39f07eaee38964d3d1566eb05e14edf1774720d91e3af0c4a42ca46c
+- id: HSM-FUN-0014
+  result: precheck_consistent
+  proof_check: 与 0007 相同命题，由 (x−1)/x 变号取最小
+  boundary_check: x=1 唯一等号；作为重复题标注
+  difficulty_after: 3
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 4b151cb5dc5803e86b75225dadbb95d718f83b5bcae10efa5b15e15c09beef61
+    stem.tex: 447309381d303c1667d5affde6a77b6143276143dd9f261a7eebcfe03cdb2833
+    solution.tex: 0f7aef65382d8330b9fb47288eadcf27dbe30356aa9c65f361544be1499e60d5
+    answer.tex: fe2ec3b075c8d9b6743ec66eddb6413bfd00486c3f757a243dfb48897bd5e8e0
+  relation:
+    kind: same_problem
+    target: HSM-FUN-0007
+- id: HSM-FUN-0015
+  result: precheck_consistent
+  proof_check: x+1 严格增、平方根严格增，复合后严格增
+  boundary_check: x=−1 为定义域左端点且包含在单调区间内
+  difficulty_after: 2
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 8036f9e0a6a6ff581195d1427eec4de78cecba3bbad04671500217387c29a3d0
+    stem.tex: 846d84031f667d5d27c23634d9012c1e82bd90850b922052e5b768b7341293db
+    solution.tex: f635435b2928615e7d70d249a486a3c58571bffa70ebd5a1d07a21bec2168c94
+    answer.tex: 6363462ae059f396348fa6307a0cc8b25a6c6e569877c962f361f86e924476c4
+- id: HSM-FUN-0016
+  result: precheck_consistent
+  proof_check: 交叉相减得到系数 7 的正差值
+  boundary_check: 分母 x+3 在区间内为正
+  difficulty_after: 2
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: e8c04fa5880db2c016a9853fcbeb29adf467112d5690ae00cddd10a08494d1ab
+    stem.tex: b5fae74293042a13e286cec4c4c8fbc519efd30444d5a2b1f6fffcac729b13ba
+    solution.tex: d81cb6cebdadf401395070d611f27b6856391b506985306fae2873f24eb46f63
+    answer.tex: a46f32858d0d930758fd9789a61179b2ada33589fa962ed6ed73f0f032cecfd0
+  relation:
+    kind: structural_variant
+    target: HSM-FUN-0001
+- id: HSM-FUN-0017
+  result: precheck_consistent
+  proof_check: 绝对值在 2 左右分别为线性斜率 −1 和 1
+  boundary_check: x=2 为非可导最小点
+  difficulty_after: 2
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 0121f7477582c871102196194ef192eaff0a2b2604e94a0ce60e9723840331d1
+    stem.tex: 2fca61f238758c08317802008fde102a5221c0c79ea0bb99f375a68bbb676521
+    solution.tex: 0db94cef862dd7e6bd825c88f0d3af6e3cc1d02dd843fd4322dc29b83f9e7a03
+    answer.tex: d4a12e23426174471539a40c568dd5f4810e193db6fa53c5169590bf9c265035
+- id: HSM-FUN-0018
+  result: precheck_consistent
+  proof_check: 导数 4x(x−1)(x+1) 符号依次 −+−+
+  boundary_check: x=−1、0、1 局部极值
+  difficulty_after: 3
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 4d285c5405e224a536200e95d0e12619316665ea009141e914fdd4b6b68df4c8
+    stem.tex: cb57369ec4febfac855b1b085ea8eea71e198f94c89383f6524677f6bd8b5248
+    solution.tex: 6a53e8267d3add0c498ad92d3e87dfbd174aff07ee8e154b6166ebe693bca7bf
+    answer.tex: 40ca0534fb897fad4bec98924a5916bd5055924d705ae3a8533a8c54a4e14be2
+- id: HSM-FUN-0019
+  result: precheck_consistent
+  proof_check: 定义域 x²−1>0；导数 2x/(x²−1) 左负右正
+  boundary_check: 在 x=±1 的断点处不得合并
+  difficulty_after: 3
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 08f9844799d46f118f552bdf03a0cbf8fd9453ee37c1d9d4abec1aa1f37a91c5
+    stem.tex: 1f32255a2cce7ed7e720e4e2365bab88ca363d380bc12653d54b53fcb458339c
+    solution.tex: 1ff62cc97fe0da1c4b4df1147a17f4e00846da7d846677b3db785e7ffe243f3d
+    answer.tex: 2bec5aee2d3fd9c73da1a76d150d3148e3b4cdba79ae50de9dee8d2c9090e681
+- id: HSM-FUN-0020
+  result: precheck_consistent
+  proof_check: '[-2,0] 平方减小使根式增，[0,2] 相反'
+  boundary_check: 端点±2 值为0，x=0 最大值2
+  difficulty_after: 2
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 31c58b16fc8ef4d65e2105011a94ee2b952c04c58713045e11235f54a95867e3
+    stem.tex: 43c7fb017a7bfc68f0d7852df65f6a9a01595a211d36dba86e5d02e9d185d893
+    solution.tex: 7bddfb2d33e55460cd08b595b754f6c67ea258cba7f6b2c31d0dcb3392b780e5
+    answer.tex: 2fee16acbdc594cff65569d3923e92b1fc09a89aa1a5e326e2373667e410e4e5
+- id: HSM-FUN-0021
+  result: precheck_consistent
+  proof_check: 对数外层严格增，内层为 (x+1)²+1
+  boundary_check: x=−1 分界且内层始终正
+  difficulty_after: 2
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: bc9e2ad18399b35b25dc58db91696bee4293556bec70be67b9e905957bb4582a
+    stem.tex: 58898c06c613a7bf7048cfcff75c014b73cfd8af628fc044fb4935e9b5dcb304
+    solution.tex: a582aed9b5b7c90c3d03fd6419d8e19a92ec2bc24c14e62c3b58a3f6b2476d0c
+    answer.tex: 214330c1fb47fc86523de447b2368fc6a81ca1cf27c0c415d0ad2f37b7fd6846
+- id: HSM-FUN-0022
+  result: precheck_consistent
+  proof_check: 导数 xe^x 与 x 同号，x=0 全局极小值−1
+  boundary_check: −∞ 端极限 0− 大于 −1
+  difficulty_after: 3
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 57862e8e89ced87dae4429de336439d1213db4788bf95e011eb38d84ba3fcbb6
+    stem.tex: abdcd83439b0bdb30b1a38b1683cfd96aef11d202bc6e651f5eef7d0dc1fcb67
+    solution.tex: b9526e9c46105290283356c43b7f6d9ca4c37ec94f73477ffb95450545d17e7e
+    answer.tex: 024919df40bf3fe046f3f58e7c6c4a2dbdba80ec7b0e30d9bb3017ed50ea4276
+- id: HSM-FUN-0023
+  result: precheck_consistent
+  proof_check: x>2 内部导数 2(x−a)≥0 的必要性及 a≤2 的充分性
+  boundary_check: a=2 临界端点仍严格增
+  difficulty_after: 2
+  difficulty_calibration: 二次函数在给定半轴的直接应用
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 7a5cb860b2a54965a8453baa59095909f3747193e2b78afe9f42de1fde8faef2
+    stem.tex: 6d38cc9dd0480ddc6014b0335e65807aaef273d549a943ec39543fbc656454c8
+    solution.tex: 7690e1fce0ad3ff58ff70cbcf84cf66d1397b7f311894029993c7f867cef1e5c
+    answer.tex: a3f13d4fcd2a0c403ebc6ee9edafd881a2be4f75f5e295a302525f4f15686839
+  relation:
+    kind: interval_variant
+    target: HSM-FUN-0004
+- id: HSM-FUN-0024
+  result: precheck_consistent
+  proof_check: x=0 导数 −3a≥0 必要，a=0 用 x³ 严格增补充
+  boundary_check: a=0 导数在点上为零
+  difficulty_after: 3
+  difficulty_calibration: 三次函数全域单调与必要充分验证
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 4e0efc560142075d5e816ec8a25eb8c2f953b803775c991a942afe502b46aba6
+    stem.tex: 3b7ae214d7253794e34e65defc5dff59dacb14819f8348ea91ed6ab6b54395f8
+    solution.tex: 8334cd5e297d8168fdf6bf2794bab6518775a481d91ba542dbf2dd06fd60ccf3
+    answer.tex: 1e53a87cd31626b51052a9d78db7c9acb78149fb6be9ae906fb5cff5cf98bc34
+- id: HSM-FUN-0025
+  result: precheck_consistent
+  proof_check: a>0 时导数于 ±√a 变号，a≤0 时不变号
+  boundary_check: a=0 驻点不是极值
+  difficulty_after: 4
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 0f384de4c4b7403ab769618b395c2acf4fb6e23d589f5b6e2337c5bcad5f7077
+    stem.tex: ef576d7c134376278f80238da7d9c159caf34954e9f062eab29a8ce138048076
+    solution.tex: 20273da33f3865bb4ac90da57689786f6ae34aa875e3f932b622b9c624c87712
+    answer.tex: afdadb641538b3944596f612b3b85ac5b151dd699beddb045be0d4e26f195fb3
+  relation:
+    kind: shifted_objective
+    target: HSM-FUN-0039
+- id: HSM-FUN-0026
+  result: precheck_consistent
+  proof_check: 内点导数≤0 必要，端点取极限推出 a≥1
+  boundary_check: a=1 导数仅端点可能零
+  difficulty_after: 4
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 0f113bccf853b3cde464ec01173e416ba568e5ac5e8e2cd60cd5b78e1d1f4f49
+    stem.tex: 27319e54fb050aa978b283c890dfec946e3bfd831e849c97926eb0e6d75c764e
+    solution.tex: 2a8b96e346e63b7312b8abb68c186f425b1af14f280cfc9a38acea2cf5ea33a2
+    answer.tex: 6a3484dad91a759e4936abc080c947e06d80a4b3011cbe508b41c7e4cc13dbc6
+- id: HSM-FUN-0027
+  result: precheck_consistent
+  proof_check: 若 a>0 在足够大的 x 有导数负；a≤0 时全正
+  boundary_check: x→+∞ 与 a=0
+  difficulty_after: 3
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: ead546edd2b54cdc3046cf8a833111632f36930f96fe99e9ccda3feda6c1b69c
+    stem.tex: 1f0416547e4e5e3e1f7f5ab499281d8077bcd5d34ef39850586808fb98fb0edb
+    solution.tex: b974e83a0ea2010f589aad7ec253644a0f111c460c85fa0459798a641e7b6c84
+    answer.tex: 1e53a87cd31626b51052a9d78db7c9acb78149fb6be9ae906fb5cff5cf98bc34
+- id: HSM-FUN-0028
+  result: precheck_consistent
+  proof_check: x−ln x 最小值1，当且仅当 x=1；等价于 0007
+  boundary_check: x>0 取等与复用标注
+  difficulty_after: 3
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 39251d3333cecb4396fe8bdb955fa7a3f402488730483bad0cdf092c849daa6e
+    stem.tex: 5566b4213b8646b3167894944f548010654f4f79b0d7600547df706151f854fa
+    solution.tex: e6379084d6eaceb68e2ee3ef1db2bca8d3dea212e65c7a71d90d227a919bca96
+    answer.tex: c53796be496bc9e2c7fad5f08efb7baaa917c6c350bbc5dcc7638feb5817c794
+  relation:
+    kind: algebraic_equivalent
+    target: HSM-FUN-0007
+- id: HSM-FUN-0029
+  result: precheck_consistent
+  proof_check: 与 0006 同一函数不等式，导数 e^x−1
+  boundary_check: x=0 唯一等号；作为重复题标注
+  difficulty_after: 3
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 1d3655cfac9e7d2307a19162dcfc8606a7cff1436fd9fcd38b4ddbd9801191ae
+    stem.tex: 04870cbf2a0d9547036ccc86004c676b401d34685942bca943706e8a04eb90b3
+    solution.tex: c80001839eb3ad9d868fb50a1682d9f82da2298b0243cc23b3f8a056b511be0b
+    answer.tex: 8c0692f34a118333b41dd64c6e8b31eaf51e936d17d67af5e01c7464215dd0ac
+  relation:
+    kind: same_problem
+    target: HSM-FUN-0006
+- id: HSM-FUN-0030
+  result: precheck_consistent
+  proof_check: 构造函数导数 x/(1+x)² 在 0 左负右正
+  boundary_check: x→−1+，x=0 唯一等号
+  difficulty_after: 3
+  difficulty_calibration: 差函数一阶导数不等式
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 529b2a59c084eb673ea0c6461137466d92744e72dc30850377ad27f3fffae5d8
+    stem.tex: 5566dbeac5c4201dd247bbc08bcefabf359c9a2a4b4cf916f7377cc43617fc1a
+    solution.tex: 4cb635adc37db71bd0bc2af359dbef2a3576564194f23fdd86f91eec34d79a7e
+    answer.tex: 6c0eff8db648fac7d4839625961b40f4ab34a31e3463b7468d90cf895c144b25
+- id: HSM-FUN-0031
+  result: precheck_consistent
+  proof_check: 1+1/x>0，函数两端极限为−∞与+∞
+  boundary_check: t 为任意实数且 x>0
+  difficulty_after: 3
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 7790d42dc088e31a8dd4b5755f3378401a6d4b52aa49da9201884a5375fce575
+    stem.tex: 09919fa3dced9b7492e2bca36dd96add7136a4c3557a39a1b590a217edf97bec
+    solution.tex: bba59147621869a4fccb4dce2ba7315b3b5fe8b4f930d5a66063c991e469dd29
+    answer.tex: 15fa2af2d235f422c8541bc7e174b23bcb7788c35f53a33a067d202782b4af4d
+- id: HSM-FUN-0032
+  result: precheck_consistent
+  proof_check: x+1/x 在 x=1 取得唯一最小2；两端发散
+  boundary_check: t=2 重根只计一个不同实根
+  difficulty_after: 3
+  difficulty_calibration: 单峰型水平线根数标准问题
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: b5efa6ae3bad32d8fd17e13049369fce3d2129c8dfd4709cfbf6c1d132a91590
+    stem.tex: 59e5d664fc2e8667b691d0e4e64d0892239c8edef7462e2ab5d750daba8f752c
+    solution.tex: 0b78b5d7df219fe9352b55712a320e5ea0e97d3a51e7531ef2b884f1d30fd85a
+    answer.tex: 8883e6842ad7067270d7f25d83a1c5549d169f7827e4748089744fb1e3ca8cd5
+- id: HSM-FUN-0033
+  result: precheck_consistent
+  proof_check: e^x/x 在 x=1 最小 e，两端均趋于+∞
+  boundary_check: a=e 切触点只计一根；a<0 无根
+  difficulty_after: 4
+  difficulty_calibration: 指数商求导及水平线参数根数
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 037acfa107be3de695e5100736957def9c275032ba33e8e6e214b26373423655
+    stem.tex: 5f3684c5b07e23902b9bac61028f46aef06c988276fd45c799d79a9dee5bab5f
+    solution.tex: 521ac651c9b0daf35f5608333a6657c84566d34f67ce1b9486ec9a40dde626ad
+    answer.tex: da1260d21049b00f4a32cf17753929d83a8f78c138cd3d763f730ecaec6bac04
+- id: HSM-FUN-0034
+  result: precheck_consistent
+  proof_check: x<0 斜率 a−1，x>0 斜率 a+1；跨0连续
+  boundary_check: a=1 左半轴常值，不满足严格增
+  difficulty_after: 4
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: ddd985757c4fa3e5d5f2bbba5746a69ed4fd765af98ea7eb4228ff52363f8c31
+    stem.tex: 3df75ac0dbe77a786234be6a76f46cf22aacfec5412e701f56259d2b336cbddb
+    solution.tex: 713897e1b67ac8760bbf81ca1d5bac4238d361f5ea0004d9ef747ee26e52463b
+    answer.tex: 092fa024adacc53e8b9ea8b8cda089efd4c6c3389e50d9e4dfbd5d16495d9f35
+- id: HSM-FUN-0035
+  result: precheck_consistent
+  proof_check: 差值中分母皆正，分子 x1−x2<0
+  boundary_check: x>−2，左端点−2不可取到，分母始终非零
+  difficulty_after: 2
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: afaa3d755244f8d83c47bba1033c029b563662512199c7514eb2b76371ab5f6b
+    stem.tex: 4fc8ea71c8915f235a2e6e688a3e76f284cfe9ad03382d70420d7d2aab2eed6e
+    solution.tex: bd0246a908f21dcafa3a3a4ef7e08ce88838b488e38236e76700d1e78c234a3e
+    answer.tex: 350315d8072057a72e63a95e131c3df34bd5fb2f2d985b91356fc1521cf933a9
+  relation:
+    kind: structural_variant
+    target: HSM-FUN-0011
+- id: HSM-FUN-0036
+  result: precheck_consistent
+  proof_check: 三次函数导数 3(x−1)(x+1)，+−+
+  boundary_check: x=−1,1 分别极大2极小−2
+  difficulty_after: 3
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: fb0ba143826ae04dd08445e70ff2fe2ecd8f247b9d69392957a1cadc17ef224b
+    stem.tex: 11aafa9d457bfa98dbcc881d1ac01533b9eb8a85b92abdd797efbf50fd72a1af
+    solution.tex: 8e3332833c24e6fd7d2803a5781a1bff678d8fcc33b99b03ef8ff9c4ad8c0072
+    answer.tex: 73bf03dfe8cfb66d8c2d11516d46fcbbcbaf1837b8b912aed94006b8e61edd5a
+- id: HSM-FUN-0037
+  result: precheck_consistent
+  proof_check: 复合对数内层 1+x² 在半轴严格增
+  boundary_check: x=0 端点，0002 的区间限制变式
+  difficulty_after: 2
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 93e4f8c6941ac8641d27f12bce43437de691b7e18dd4b0347c2fa2475fbb55cc
+    stem.tex: 75f961a759854a046a70939f46714856aa41a439532d137905d654f0a0ead2a4
+    solution.tex: 514a0b6026ab8c7516ec0aafe8370bb1e4c4cc21bd3b8673057452bfb657c35b
+    answer.tex: 309398b0faaa73a22c70e9c5aa13f5272d513313c3e39e217159e3624ab54176
+  relation:
+    kind: domain_restriction
+    target: HSM-FUN-0002
+- id: HSM-FUN-0038
+  result: precheck_consistent
+  proof_check: 令 t=1+x>0 等价于 ln t≤t−1
+  boundary_check: x=0 唯一等号；与 0007 同数学母题
+  difficulty_after: 3
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: cea6c97d02e6dadb6cedfc56f02d13c77fb0ce30850d286b983b2434f019dd65
+    stem.tex: 8c158a3012bf4a44840dd47a9cb14dd9fe9aa032c5037d11243d387876ba37f9
+    solution.tex: 03927d6069c4d74f7e0566b5ffc5692cd49b89638921608043c05bb4c8a4d1e7
+    answer.tex: 5bb042c1e56f30e5049491b9ba101dbc567d680ce018a48025dc4b93c3cce5a1
+  relation:
+    kind: substitution_equivalent
+    target: HSM-FUN-0007
+- id: HSM-FUN-0039
+  result: precheck_consistent
+  proof_check: 导数 3(x²−a)，a=0 时 x³ 严格增
+  boundary_check: a>0 两极值点 ±√a
+  difficulty_after: 4
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: e6eb733bc7eb7c0cdedcd1df8e75eafcdb3663cfbac311c24b7f409512523378
+    stem.tex: 338696fe820c98f4bfaae2d401c6da424b1ee1d7363a3ab20953d4908d063f21
+    solution.tex: d8d29fb1fbf10ac9b9642a11b1a81ed9dc6aead5c85374e4822bb51342293e49
+    answer.tex: 0a1b385cfb2954663e85d41487aa13db68b9c5a9adb77c6f33410ad460315573
+  relation:
+    kind: related_parameter_family
+    target: HSM-FUN-0024
+- id: HSM-FUN-0040
+  result: precheck_consistent
+  proof_check: F=x³−3x 导数 3(x+1)(x−1)；两极值2与−2分水平线
+  boundary_check: t=±2 重根只计一次，并独立给出导数分析
+  difficulty_after: 4
+  difficulty_calibration: 保持 V1.3 编辑预估
+  source_review: not_independently_verified
+  human_review_required: true
+  content_sha256:
+    metadata.yml: 72b612dd6c37a9be24d26bdf66e0d1a5f7ac924f9423e103304d30ce87da2dbf
+    stem.tex: f145a2959567fdf164678014fe0b57edf86a902963f09d6a6e8ec2bfc3fc1400
+    solution.tex: 47bc5c1eb73b3fe477278f3e8c3af5d4b738c995cdf2408bdf812b68a70aef32
+    answer.tex: c672f23631d2ebb66b55824a42f2517b877ab29dca384338c54c1894080a4b60
+  relation:
+    kind: different_task_same_function
+    target: HSM-FUN-0036
+  editorial_fix: 解除独立解答对讲义内部例题编号的依赖，补充导数分析和水平线分类。

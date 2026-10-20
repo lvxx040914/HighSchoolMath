@@ -18,3 +18,6 @@ source:
   citation: HighSchoolMath V1.2 原创示例题
   permission: self_authored
   note: 数学命题与计算初步自检；尚未完成独立人工审核。
+review_relation:
+  kind: algebraic_equivalent
+  target: HSM-FUN-0007

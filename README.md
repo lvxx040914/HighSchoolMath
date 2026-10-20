@@ -51,3 +51,13 @@ python3 tools/build.py --config config/monotonicity_practice.yml --edition answe
 ## 内容质量边界
 
 V1.3 将以前嵌在 `monotonicity.tex` 内的六道示范例题迁入 `questions/HSM-FUN-0035` 至 `HSM-FUN-0040`。这是**结构迁移，不是新增六道原创数学题**。题库累计 40 条，10 道示范、30 道训练，尚未完成独立人工复核。自动编译、元数据测试和 PDF 隔离测试不是数学正确性证书。公开转载外部真题前须核查许可。
+
+## V1.4 数学审稿预检（不等同正式审核）
+
+- [40 道题逐题预检报告](docs/V1_4_REVIEW_REPORT.md)；逐题检查依据存放在 `review/v1_4_audit.yml`。
+- 发现并标注重复/等价命题关系，保留永久题目 ID；修正 `HSM-FUN-0040` 的独立解答依赖。
+- 8 道题按统一编辑难度标准重新分级；所有题目仍为 `draft`，未通过独立人工审稿。
+- 审核记录包含题目源文件 SHA-256 指纹，任何题面、解析或元数据修改都会使预检失效。
+- `make check` 包含审核记录校验。组卷时可使用 `--avoid-equivalent` 排除数学等价的重复题。
+
+可使用 `python3 tools/compose.py --count 8 --avoid-equivalent --seed 2026` 生成无已知等价重复的题单。
