@@ -50,3 +50,10 @@ archetypes:
 - 原题中的 `topics: [K-*]` 与 `methods: [M-*]` **不改动**。V1.1 目录用 `legacy_knowledge_ids`、`legacy_method_id` 与 V1.0 实体建立别名映射。
 - 禁止自动把 `draft` 改为 `math_checked` 或 `published`。
 - `python tools/validate_catalog.py` 校验双向引用、旧实体别名、目录循环依赖和题型 ID。
+
+## V1.2 讲义题单扩展
+
+- `worked_ids`：正文内带详细解答的独立母题，使用 `\showworked{题目ID}` 引用。
+- `question_ids`：训练题，生成学生版题干与教师版答案；二者必须无交集、不可重复。
+- `review_status` 不允许由构建工具自动升级；新增 24 道题全部暂列 `draft`。
+- 未来可进一步将 V1.0 手写的 6 道示范例题迁移到独立题库（暂不强行删除旧内容）。

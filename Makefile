@@ -1,5 +1,5 @@
 PYTHON ?= python3
-.PHONY: validate catalog check report test generate student teacher build clean
+.PHONY: validate catalog check report test generate student teacher build pdfcheck clean
 
 validate:
 	$(PYTHON) tools/validate.py
@@ -33,3 +33,6 @@ check:
 	$(PYTHON) tools/validate_catalog.py
 	$(PYTHON) tools/render_catalog.py --check
 	$(PYTHON) -m unittest discover -s tests -v
+
+pdfcheck:
+	$(PYTHON) tools/verify_pdf.py

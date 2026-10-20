@@ -36,6 +36,32 @@
 \textbf{必须区分充分与必要条件}：$f'(x)>0$ 是严格递增的充分条件，但不是必要条件。例如 $f(x)=x^3$ 在 $\mathbb R$ 上严格递增，而 $f'(0)=0$。仅由 $f'(x_0)=0$ 不能断定 $x_0$ 为极值点；需要进一步检查附近的导数符号。
 \end{methodbox}
 
+
+\subsection{严格单调与导数条件的逻辑关系}
+\begin{knowledgebox}[title=定理 1A：导数必要条件与严格单调判别]
+设 $f$ 在开区间 $I$ 内可导，则：
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $f$ 在 $I$ 上单调不减（特别是严格递增），则对每个 $x\in I$ 有 $f'(x)\ge0$。
+\item 若 $f'(x)\ge0$ 对所有 $x\in I$ 成立，且 $f$ 在 $I$ 的任何非退化子区间上都不恒为常数，则 $f$ 在 $I$ 上严格递增。
+\end{enumerate}
+相应的递减结论由 $-f$ 得到。若讨论闭区间，须再要求端点连续。
+\end{knowledgebox}
+\textbf{证明}：(1) 任取 $x\in I$，对充分小的 $h\ne0$，由非减性知
+\[
+\frac{f(x+h)-f(x)}{h}\ge0,
+\]
+故极限 $f'(x)\ge0$。
+
+(2) 由中值定理，$f$ 在 $I$ 上非减。若存在 $x_1<x_2$ 而 $f(x_1)=f(x_2)$，则对每个 $x\in[x_1,x_2]$，有
+\[
+f(x_1)\le f(x)\le f(x_2)=f(x_1),
+\]
+从而 $f$ 在 $[x_1,x_2]$ 恒定，矛盾。因此严格递增。$\square$
+
+\begin{methodbox}
+\textbf{辨析}：$f'(x)\ge0$ 仅保证非减，不能不加验证地得出严格递增。$f(x)=x^3$ 说明严格递增不要求处处 $f'>0$；常函数则说明处处 $f'\ge0$ 不足以推出严格递增。若 $f'$ 只在有限个点取零、其余点严格为正，则可分段用中值定理证明严格递增。
+\end{methodbox}
+
 \subsection{导数变号与极值}
 设 $f$ 在 $x_0$ 连续，并在 $x_0$ 左右去心邻域内可导。若 $f'$ 在左侧为正、右侧为负，则 $x_0$ 为严格局部极大值点；若由负变正，则为严格局部极小值点。若两侧导数同号，该判别条件不产生极值。求闭区间最值时，还必须比较端点值。
 
@@ -55,6 +81,8 @@
 \]
 故 $f$ 在 $(-2,+\infty)$ 上严格递减。$\square$
 \end{examplebox}
+
+\showworked{HSM-FUN-0011}
 
 \subsection{导数法：符号表与区间划分}
 \begin{methodbox}
@@ -78,6 +106,23 @@
 局部极大值为 $2$，局部极小值为 $-2$。$\square$
 \end{examplebox}
 
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=.73\linewidth,height=5.1cm,axis lines=middle,
+ xmin=-2.25,xmax=2.25,ymin=-4.4,ymax=4.4,samples=180,
+ xlabel={$x$},ylabel={$y$},xtick={-1,0,1},ytick={-2,2},
+ grid=major,grid style={line!45},tick label style={font=\small}]
+\addplot[very thick,primary,domain=-2.15:2.15]{x^3-3*x};
+\addplot[only marks,mark=*,mark size=1.8pt] coordinates {(-1,2)(1,-2)};
+\node[anchor=south east] at (axis cs:-1,2) {$(-1,2)$};
+\node[anchor=north west] at (axis cs:1,-2) {$(1,-2)$};
+\end{axis}
+\end{tikzpicture}
+
+{\footnotesize 图 1\quad $y=x^3-3x$ 的导数变号、极值与水平线交点}
+\end{center}
+
 \subsection{复合函数法：先检验映射区间}
 \begin{knowledgebox}[title=定理 2：复合函数单调性]
 设 $g$ 在区间 $I$ 上严格单调，$g(I)\subseteq J$，且 $f$ 在区间 $J$ 上严格单调，则 $f\circ g$ 在 $I$ 上严格单调。同向得到递增，反向得到递减。必须先核查 $g(I)$ 是否落在外层函数的单调区间内。
@@ -91,6 +136,10 @@
 \]
 因此 $h$ 在 $[0,+\infty)$ 上严格递增。$\square$
 \end{examplebox}
+
+\begin{methodbox}
+\textbf{复合问题判定次序}：先求复合函数的定义域；再判断内层在所给区间的增减；最后确认内层的值域位于外层的单调区间。不能在外层跨越单调分界点时套用“同增异减”。
+\end{methodbox}
 
 \subsection{构造函数法：把不等式转成单调性}
 \begin{methodbox}
@@ -109,6 +158,14 @@
 \]
 即 $\boxed{\ln(1+x)\le x\ (x>-1)}$，等号当且仅当 $x=0$。$\square$
 \end{examplebox}
+
+\showworked{HSM-FUN-0014}
+
+\subsection{同一不等式的不同表示}
+利用 $\ln x\le x-1$（$x>0$），令 $x=1+t$ 可得 $\ln(1+t)\le t$（$t>-1$）。
+\begin{methodbox}
+\textbf{代换检验}：必须将 $x>0$ 精确转换为 $t>-1$，并同时保留等号 $t=0$。没有记录定义域的代换结论是不完整的。
+\end{methodbox}
 
 \section{含参数讨论与综合应用}
 
@@ -133,7 +190,11 @@
 综上，$\boxed{a\le0\text{ 时在 }\mathbb R\text{ 上严格递增； } a>0\text{ 时如上分段单调。}}$ $\square$
 \end{examplebox}
 
+\showworked{HSM-FUN-0012}
+
+\Needspace{17\baselineskip}
 \subsection{利用极值判断方程的实根个数}
+\Needspace{11\baselineskip}
 \begin{examplebox}[title=例题 6｜方程根的个数]
 讨论方程 $x^3-3x=t$（$t\in\mathbb R$）的不同实根个数。
 \standard 令 $F(x)=x^3-3x$。由例题 2 可知，$F$ 在 $-1$ 处取局部极大值 $2$，在 $1$ 处取局部极小值 $-2$，且
@@ -153,6 +214,44 @@ N(t)=\begin{cases}
 $\square$
 \end{examplebox}
 
+\section{分段单调性、不可导点与端点}
+
+\begin{knowledgebox}[title=分段函数严格递增的跨点条件]
+设 $c$ 为区间内部一点，$f$ 在 $I\cap(-\infty,c)$ 与 $I\cap[c,+\infty)$ 分别严格递增。则 $f$ 在整个 $I$ 严格递增，当且仅当
+\[
+f(x)<f(y)\quad\bigl(x<c\le y,\ x,y\in I\bigr).
+\]
+该跨点条件不能只由各段内部的导数符号推出，也不要求函数一定连续。
+\end{knowledgebox}
+
+\Needspace{13\baselineskip}
+\showworked{HSM-FUN-0013}
+
+\subsection{不可导点是否影响单调性}
+例如 $|x|$ 在 $0$ 不可导，但在 $(-\infty,0]$ 上严格递减，在 $[0,+\infty)$ 上严格递增。导数方法必须与定义法、连续性和分段比较配合，不能因某点不可导就直接把该点排除出单调区间。
+
+\section{题型选择路径与综合辨析}
+
+\begin{methodbox}
+\textbf{先问目标，再定方法。}
+\begin{enumerate}[label=(\arabic*)]
+\item 若题目要求\emph{直接证明单调性}，优先检查定义法与复合函数法；可导时再考虑导数。
+\item 若要求\emph{单调区间与极值}，先求定义域，再解 $f'(x)=0$，核验不可导点、端点及导数变号。
+\item 若\emph{已知单调性反求参数}，先利用 $f'\ge0$ 或 $f'\le0$ 导出必要条件，再单独验证严格单调的充分性。
+\item 若\emph{证明不等式}，构造差函数并同时寻找等号；若\emph{判定根数}，还要结合连续性、端点极限和水平线位置。
+\end{enumerate}
+\end{methodbox}
+
+\begin{knowledgebox}[title=五个必须辨别的反例]
+\begin{enumerate}[label=(\arabic*)]
+\item $x^3$ 严格递增而 $f'(0)=0$，故导数处处为正不是必要条件。
+\item 常函数处处满足 $f'=0$，故 $f'\ge0$ 不足以推出严格递增。
+\item $f(x)=1/x$ 在 $(-\infty,0)$ 和 $(0,+\infty)$ 分别严格递减，但不能把两段写为一个单调区间。
+\item $|x|$ 在 $0$ 不可导，不能因此认定 $0$ 为断点或者不能取到最值。
+\item $x^3$ 在 $0$ 处导数为零但无局部极值；驻点与极值点不可混用。
+\end{enumerate}
+\end{knowledgebox}
+
 \section{专题归纳与审题检查}
 
 \begin{knowledgebox}[title=统一的数学思路]
@@ -163,7 +262,7 @@ $\square$
 
 \clearpage
 \section{专题训练（独立题库引用）}
-\noindent\textcolor{muted}{本节题目由 YAML 清单自动组合；题目 ID 固定，编号随当前题单生成。\ifteacher 教师版的完整解答见后附答案解析。\else 学生版不附训练题答案，可用于自测。\fi}
+\noindent\textcolor{muted}{本节共有 30 道分层训练题，来自 YAML 题单，含基础、综合和压轴方向；ID 固定，编号随题单自动生成。\ifteacher 教师版的完整解答见后附答案解析。\else 学生版不附训练题答案，可用于自测。\fi}
 \input{tex/generated/questions.tex}
 \ifteacher
 \clearpage

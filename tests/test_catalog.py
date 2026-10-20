@@ -15,7 +15,7 @@ class CatalogTest(unittest.TestCase):
         self.assertGreaterEqual(counts['topics'], 90)
         self.assertGreaterEqual(counts['methods'], 40)
         self.assertGreaterEqual(counts['archetypes'], 50)
-        self.assertEqual(counts['mapped_questions'], 10)
+        self.assertEqual(counts['mapped_questions'], 34)
 
     def _snapshot(self, folder):
         root = Path(folder)
