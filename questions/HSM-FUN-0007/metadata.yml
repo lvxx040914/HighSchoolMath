@@ -1,0 +1,17 @@
+schema_version: 1
+id: HSM-FUN-0007
+title: 对数函数基本不等式
+chapter: 函数与导数
+topics:
+- K-FUN-INEQ
+methods:
+- M-AUX-FUNC
+type: proof
+difficulty: 3
+level: intermediate
+review_status: draft
+source:
+  kind: self_written
+  citation: 本项目教学示例自拟
+  permission: self_authored
+  note: 根据高中数学常见问题类型独立编写，尚待人工数学与版权审校。

@@ -1,0 +1,174 @@
+\booktitle
+\noindent\textbf{学习目标}：准确使用严格单调性的定义；掌握定义法、导数法、复合函数法与构造函数法；能够完成含参数的单调区间分类、恒成立问题及零点个数判定。
+
+\noindent\textbf{知识前置}：函数定义域、初等函数、导数及其运算、连续性、介值定理。
+
+\section{基本概念与核心定理}
+
+\subsection{单调性的精确定义}
+设函数 $f$ 的定义域包含区间 $I$。若对任意 $x_1,x_2\in I$ 且 $x_1<x_2$，均有
+\[
+ f(x_1)<f(x_2),
+\]
+则称 $f$ 在 $I$ 上\textbf{严格递增}；将 $<$ 换为 $>$，则称其\textbf{严格递减}。若对应不等式为 $\le$ 或 $\ge$，分别称为\textbf{非减}或\textbf{非增}。
+
+\begin{knowledgebox}
+\textbf{区间与定义域不可省略。}函数在两个互不相交的区间上分别递增，不意味着函数在两区间的并集上递增；利用不等式比较 $f(x_1),f(x_2)$ 时，须始终保证 $x_1,x_2$ 属于同一指定区间。
+\end{knowledgebox}
+
+\subsection{导数与单调性的关系}
+\begin{knowledgebox}[title=定理 1：一阶导数判定]
+设 $f$ 在区间 $I$ 内可导，则：
+\begin{enumerate}[label=(\arabic*)]
+\item 若对任意 $x\in I$，$f'(x)>0$，则 $f$ 在 $I$ 上严格递增；若 $f'(x)<0$，则严格递减。
+\item 若对任意 $x\in I$，$f'(x)\ge 0$，则 $f$ 在 $I$ 上非减；若 $f'(x)\le 0$，则非增。
+\end{enumerate}
+若 $I=[a,b]$，只需 $f$ 在 $[a,b]$ 连续、在 $(a,b)$ 可导，并将上述导数条件施于 $(a,b)$，结论对整个 $[a,b]$ 成立。
+\end{knowledgebox}
+
+\textbf{证明}：任取 $x_1<x_2$，由拉格朗日中值定理，存在 $\xi\in(x_1,x_2)$，使
+\[
+ f(x_2)-f(x_1)=f'(\xi)(x_2-x_1).
+\]
+因 $x_2-x_1>0$，根据 $f'(\xi)$ 的符号，即得相应结论。$\square$
+
+\begin{methodbox}
+\textbf{必须区分充分与必要条件}：$f'(x)>0$ 是严格递增的充分条件，但不是必要条件。例如 $f(x)=x^3$ 在 $\mathbb R$ 上严格递增，而 $f'(0)=0$。仅由 $f'(x_0)=0$ 不能断定 $x_0$ 为极值点；需要进一步检查附近的导数符号。
+\end{methodbox}
+
+\subsection{导数变号与极值}
+设 $f$ 在 $x_0$ 连续，并在 $x_0$ 左右去心邻域内可导。若 $f'$ 在左侧为正、右侧为负，则 $x_0$ 为严格局部极大值点；若由负变正，则为严格局部极小值点。若两侧导数同号，该判别条件不产生极值。求闭区间最值时，还必须比较端点值。
+
+\section{四种常用方法}
+
+\subsection{定义法：直接比较函数值}
+\begin{methodbox}
+任取 $x_1<x_2$，并且 $x_1,x_2\in I$，化简 $f(x_2)-f(x_1)$，利用 $x_2-x_1>0$ 及分母或其他因子的符号，判断差的正负。此法不要求可导，适合分式函数、根式函数或端点不可导的情形。
+\end{methodbox}
+
+\begin{examplebox}[title=例题 1｜定义法判定]
+证明 $f(x)=\dfrac{1}{x+2}$ 在 $(-2,+\infty)$ 上严格递减。
+\standard 任取 $-2<x_1<x_2$，则
+\[
+ f(x_2)-f(x_1)
+ =\frac{x_1-x_2}{(x_1+2)(x_2+2)}<0.
+\]
+故 $f$ 在 $(-2,+\infty)$ 上严格递减。$\square$
+\end{examplebox}
+
+\subsection{导数法：符号表与区间划分}
+\begin{methodbox}
+(1) 确定定义域；(2) 求导并因式分解；(3) 求导数零点及不可导点；(4) 依照符号划分区间；(5) 单独核查零点、端点和参数临界值。若要求极值，还需核验变号方向。
+\end{methodbox}
+
+\begin{examplebox}[title=例题 2｜单调区间与极值]
+求 $f(x)=x^3-3x$ 的单调区间及局部极值。
+\standard $f'(x)=3(x-1)(x+1)$。于是
+\[
+ \begin{array}{c|ccc}
+ x&(-\infty,-1)&(-1,1)&(1,+\infty)\\ \hline
+ f'(x)&+&-&+\\
+ f(x)&\nearrow&\searrow&\nearrow
+ \end{array}
+\]
+故增区间为 $(-\infty,-1]$ 和 $[1,+\infty)$，减区间为 $[-1,1]$；
+\[
+ f(-1)=2,\qquad f(1)=-2.
+\]
+局部极大值为 $2$，局部极小值为 $-2$。$\square$
+\end{examplebox}
+
+\subsection{复合函数法：先检验映射区间}
+\begin{knowledgebox}[title=定理 2：复合函数单调性]
+设 $g$ 在区间 $I$ 上严格单调，$g(I)\subseteq J$，且 $f$ 在区间 $J$ 上严格单调，则 $f\circ g$ 在 $I$ 上严格单调。同向得到递增，反向得到递减。必须先核查 $g(I)$ 是否落在外层函数的单调区间内。
+\end{knowledgebox}
+
+\begin{examplebox}[title=例题 3｜复合结构]
+判断 $h(x)=\ln(1+x^2)$ 在 $[0,+\infty)$ 上的单调性。
+\standard 当 $0\le x_1<x_2$ 时，$1+x_1^2<1+x_2^2$。又 $\ln t$ 在 $(0,+\infty)$ 上严格递增，故
+\[
+ \ln(1+x_1^2)<\ln(1+x_2^2).
+\]
+因此 $h$ 在 $[0,+\infty)$ 上严格递增。$\square$
+\end{examplebox}
+
+\subsection{构造函数法：把不等式转成单调性}
+\begin{methodbox}
+欲证 $A(x)\ge B(x)$，可构造 $F(x)=A(x)-B(x)$，通过 $F'$ 的符号确定最小值；等号成立条件须单独求出。这是导数证明不等式、参数恒成立与函数值比较的共同原理。
+\end{methodbox}
+
+\begin{examplebox}[title=例题 4｜证明经典对数不等式]
+证明对一切 $x>-1$，有 $\ln(1+x)\le x$，并求等号条件。
+\standard 设 $F(x)=x-\ln(1+x)$，定义域为 $(-1,+\infty)$，则
+\[
+ F'(x)=\frac{x}{1+x}.
+\]
+故 $F$ 在 $(-1,0]$ 上严格递减，在 $[0,+\infty)$ 上严格递增，因而
+\[
+ F(x)\ge F(0)=0.
+\]
+即 $\boxed{\ln(1+x)\le x\ (x>-1)}$，等号当且仅当 $x=0$。$\square$
+\end{examplebox}
+
+\section{含参数讨论与综合应用}
+
+\subsection{参数的临界值必须独立检查}
+\begin{examplebox}[title=例题 5｜含参数的单调性完整分类]
+讨论 $f_a(x)=x^3-3ax$（$a\in\mathbb R$）的单调性。
+\standard $f_a'(x)=3(x^2-a)$。
+
+当 $a<0$ 时，$f_a'(x)>0$（$x\in\mathbb R$），故 $f_a$ 在 $\mathbb R$ 上严格递增。
+
+当 $a=0$ 时，$f_0(x)=x^3$，在 $\mathbb R$ 上严格递增。
+
+当 $a>0$ 时，$f_a'(x)=0$ 的根为 $x=\pm\sqrt a$，且
+\[
+\begin{cases}
+ f_a'(x)>0,& x<-\sqrt a\ \text{或}\ x>\sqrt a,\\
+ f_a'(x)<0,& -\sqrt a<x<\sqrt a.
+\end{cases}
+\]
+故增区间为 $(-\infty,-\sqrt a]$、$[\sqrt a,+\infty)$，减区间为 $[-\sqrt a,\sqrt a]$。
+
+综上，$\boxed{a\le0\text{ 时在 }\mathbb R\text{ 上严格递增； } a>0\text{ 时如上分段单调。}}$ $\square$
+\end{examplebox}
+
+\subsection{利用极值判断方程的实根个数}
+\begin{examplebox}[title=例题 6｜方程根的个数]
+讨论方程 $x^3-3x=t$（$t\in\mathbb R$）的不同实根个数。
+\standard 令 $F(x)=x^3-3x$。由例题 2 可知，$F$ 在 $-1$ 处取局部极大值 $2$，在 $1$ 处取局部极小值 $-2$，且
+\[
+ \lim_{x\to-\infty}F(x)=-\infty,\qquad
+ \lim_{x\to+\infty}F(x)=+\infty.
+\]
+利用三个单调区间内的严格单调性及介值定理，得不同实根个数为
+\[
+\boxed{
+N(t)=\begin{cases}
+3,& -2<t<2,\\
+2,& t=\pm2,\\
+1,& t<-2\ \text{或}\ t>2.
+\end{cases}}
+\]
+$\square$
+\end{examplebox}
+
+\section{专题归纳与审题检查}
+
+\begin{knowledgebox}[title=统一的数学思路]
+\textbf{函数差值}回答「定义上为何单调」；\textbf{导数符号}回答「在什么区间单调」；\textbf{临界值分类}回答「参数怎样改变单调区间」；\textbf{构造函数}回答「函数比较与不等式」；\textbf{极值与连续性}回答「方程根有几个」。
+\end{knowledgebox}
+
+务必检查：是否写明定义域；是否把 $f'\ge0$ 当成 $f'>0$；是否遗漏 $a=0$；是否遗漏区间端点；是否把局部极值误作全局最值；是否在一个定义域不连通的集合上直接合并单调区间。
+
+\clearpage
+\section{专题训练（独立题库引用）}
+\noindent\textcolor{muted}{本节题目由 YAML 清单自动组合；题目 ID 固定，编号随当前题单生成。\ifteacher 教师版的完整解答见后附答案解析。\else 学生版不附训练题答案，可用于自测。\fi}
+\input{tex/generated/questions.tex}
+\ifteacher
+\clearpage
+\section{专题训练答案与解析}
+\begingroup\small\linespread{1.08}\selectfont
+\input{tex/generated/solutions.tex}
+\endgroup
+\fi

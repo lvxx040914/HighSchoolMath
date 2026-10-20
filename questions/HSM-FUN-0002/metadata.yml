@@ -1,0 +1,18 @@
+schema_version: 1
+id: HSM-FUN-0002
+title: 复合对数函数的单调区间
+chapter: 函数与导数
+topics:
+- K-FUN-MONO
+- K-FUN-COMPOSITE
+methods:
+- M-DERIV-SIGN
+type: solution
+difficulty: 2
+level: foundation
+review_status: draft
+source:
+  kind: self_written
+  citation: 本项目教学示例自拟
+  permission: self_authored
+  note: 根据高中数学常见问题类型独立编写，尚待人工数学与版权审校。

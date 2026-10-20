@@ -1,0 +1,5 @@
+id: M-PARAM-CASES
+title: 参数临界值分类
+related_knowledge:
+- K-FUN-PARAM
+principle: 先求导致零点结构改变的阈值，再分别证明边界与各开区域。

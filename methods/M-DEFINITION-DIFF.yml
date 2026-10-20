@@ -1,0 +1,5 @@
+id: M-DEFINITION-DIFF
+title: 定义差值法
+related_knowledge:
+- K-FUN-MONO
+principle: 取 $x_1<x_2$，化简 $f(x_2)-f(x_1)$，根据固定区间判断符号。

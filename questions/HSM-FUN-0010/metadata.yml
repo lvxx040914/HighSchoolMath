@@ -1,0 +1,19 @@
+schema_version: 1
+id: HSM-FUN-0010
+title: 含参数对数方程的根数
+chapter: 函数与导数
+topics:
+- K-FUN-ROOTS
+- K-FUN-PARAM
+methods:
+- M-DERIV-SIGN
+- M-EXT-INTERVAL
+type: solution
+difficulty: 5
+level: advanced
+review_status: draft
+source:
+  kind: self_written
+  citation: 本项目教学示例自拟
+  permission: self_authored
+  note: 根据高中数学常见问题类型独立编写，尚待人工数学与版权审校。

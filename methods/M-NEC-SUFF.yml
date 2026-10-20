@@ -1,0 +1,5 @@
+id: M-NEC-SUFF
+title: 必要性与充分性双向证明
+related_knowledge:
+- K-FUN-PARAM
+principle: 先给出可行参数构成的充分条件，再排除其余所有参数。

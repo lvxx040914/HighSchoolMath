@@ -1,0 +1,5 @@
+id: K-FUN-PARAM
+title: 含参数函数分类
+prerequisites:
+- K-FUN-MONO
+core_statement: 参数改变导数零点或符号结构；边界情形必须单列。

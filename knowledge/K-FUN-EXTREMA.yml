@@ -1,0 +1,5 @@
+id: K-FUN-EXTREMA
+title: 极值与闭区间最值
+prerequisites:
+- K-FUN-MONO
+core_statement: 极值需要局部符号信息，闭区间最值需比较端点与内部候选点。

@@ -1,0 +1,6 @@
+id: K-FUN-ROOTS
+title: 函数零点个数与连续性
+prerequisites:
+- K-FUN-MONO
+- K-FUN-EXTREMA
+core_statement: 依据连续性、单调区间及极值，讨论水平直线与曲线的交点个数。

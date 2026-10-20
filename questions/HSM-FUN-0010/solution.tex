@@ -1,0 +1,21 @@
+设 $F_a(x)=\ln x-ax$（$x>0$），则
+\[
+F_a'(x)=\frac1x-a.
+\]
+当 $a\le0$ 时，$F_a'(x)>0$，且 $\lim_{x\to0^+}F_a(x)=-\infty$、$\lim_{x\to+\infty}F_a(x)=+\infty$，故恰有一个实根。
+
+当 $a>0$ 时，$F_a$ 在 $(0,1/a]$ 上严格递增，在 $[1/a,+\infty)$ 上严格递减，且
+\[
+\lim_{x\to0^+}F_a(x)=\lim_{x\to+\infty}F_a(x)=-\infty,\qquad
+\max F_a=F_a(1/a)=-\ln a-1.
+\]
+故由极大值与零的比较，利用连续性得不同实根个数
+\[
+\boxed{
+N(a)=\begin{cases}
+1,&a\le0,\\
+2,&0<a<e^{-1},\\
+1,&a=e^{-1},\\
+0,&a>e^{-1}.
+\end{cases}}
+\]

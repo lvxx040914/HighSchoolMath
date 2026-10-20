@@ -1,0 +1,5 @@
+id: M-EXT-INTERVAL
+title: 极值结合介值定理
+related_knowledge:
+- K-FUN-ROOTS
+principle: 对每个严格单调区间分别分析端点极限与值域，再统计交点数。

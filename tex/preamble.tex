@@ -1,0 +1,35 @@
+\documentclass[a4paper,11pt,UTF8]{ctexart}
+\usepackage[margin=23mm,headheight=16pt,headsep=10pt,footskip=14mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins}
+\usepackage{fontspec,xcolor,fancyhdr,enumitem,hyperref,microtype}
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKsansfont{Noto Sans CJK SC}
+\setmainfont{Liberation Serif}
+\definecolor{primary}{HTML}{1C405E}
+\definecolor{muted}{HTML}{65727F}
+\definecolor{line}{HTML}{CBD8E0}
+\hypersetup{colorlinks=true,linkcolor=primary,urlcolor=primary,pdfauthor={HighSchoolMath 项目组},pdftitle={函数的单调性——高中数学样章}}
+\linespread{1.16}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{2pt}
+\setlist[enumerate]{leftmargin=2.3em,itemsep=2pt,topsep=4pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{muted} HighSchoolMath · 函数与导数}
+\fancyhead[R]{\small\color{muted}\ifteacher 教师版\else 学生版\fi}
+\fancyfoot[C]{\small\color{muted}\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\emergencystretch}{1em}
+\newtcolorbox{knowledgebox}[1][]{enhanced,breakable,colback=primary!3,colframe=primary!55,boxrule=.55pt,arc=2pt,left=9pt,right=9pt,top=7pt,bottom=7pt,title=核心结论,fonttitle=\bfseries,#1}
+\newtcolorbox{methodbox}[1][]{enhanced,breakable,colback=black!1,colframe=line,boxrule=.5pt,arc=2pt,left=9pt,right=9pt,top=7pt,bottom=7pt,#1}
+\newtcolorbox{examplebox}[1][]{enhanced,breakable,colback=white,colframe=primary!55,boxrule=.6pt,arc=2pt,left=9pt,right=9pt,top=7pt,bottom=7pt,fonttitle=\bfseries,#1}
+\newcommand{\reasoning}{\par\noindent\textbf{分析}\quad}
+\newcommand{\standard}{\par\noindent\textbf{规范解答}\quad}
+\newcommand{\methodnote}{\par\noindent\textbf{方法要点}\quad}
+\newcounter{exercise}
+\newcommand{\showquestion}[1]{\refstepcounter{exercise}\par\medskip\noindent\textbf{第\theexercise 题}\hfill{\footnotesize\color{muted}\texttt{#1}}\par\noindent\input{questions/#1/stem.tex}\par\smallskip}
+\newcounter{answer}
+\newcommand{\showanswer}[1]{\stepcounter{answer}\par\smallskip\noindent\textbf{第\theanswer 题}\hfill{\footnotesize\color{muted}\texttt{#1}}\par\noindent\input{questions/#1/solution.tex}\par\smallskip}
+\newcommand{\booktitle}{\begin{center}{\Large\bfseries\color{primary} 高中数学专题讲义}\par\vspace{5pt}{\huge\bfseries 函数的单调性}\par\vspace{7pt}{\small 函数与导数 · V1.0 试验样章 · \ifteacher 教师版\else 学生版\fi}\end{center}\vspace{12pt}}

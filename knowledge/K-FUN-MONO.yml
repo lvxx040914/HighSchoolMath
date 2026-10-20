@@ -1,0 +1,4 @@
+id: K-FUN-MONO
+title: 函数单调性的定义与性质
+prerequisites: []
+core_statement: 在同一指定区间内比较任意两点的函数值；严格与非严格不等式不可混用。

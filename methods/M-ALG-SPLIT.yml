@@ -1,0 +1,5 @@
+id: M-ALG-SPLIT
+title: 代数拆分辅助求导
+related_knowledge:
+- K-FUN-EXTREMA
+principle: 把有理函数化成多项式项与简单分式项，简化导数与符号判断。

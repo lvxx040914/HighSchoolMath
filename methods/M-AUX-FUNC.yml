@@ -1,0 +1,5 @@
+id: M-AUX-FUNC
+title: 构造差函数法
+related_knowledge:
+- K-FUN-INEQ
+principle: 令 $F=A-B$，通过导数确定极小值并核对等号。

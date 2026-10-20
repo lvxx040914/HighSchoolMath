@@ -1,0 +1,5 @@
+id: K-FUN-INEQ
+title: 利用单调性证明不等式
+prerequisites:
+- K-FUN-MONO
+core_statement: 构造目标差函数，确定全局最小值及等号条件。

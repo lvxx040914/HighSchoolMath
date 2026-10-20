@@ -1,0 +1,5 @@
+id: K-FUN-RADICAL
+title: 根式函数定义域与单调性
+prerequisites:
+- K-FUN-MONO
+core_statement: 比较非负根号内的大小，并利用平方根函数严格递增。

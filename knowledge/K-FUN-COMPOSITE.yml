@@ -1,0 +1,5 @@
+id: K-FUN-COMPOSITE
+title: 复合函数单调性
+prerequisites:
+- K-FUN-MONO
+core_statement: 检查内层函数的值域是否包含在外层函数的单调区间内；同向增，反向减。

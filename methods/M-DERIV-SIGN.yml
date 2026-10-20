@@ -1,0 +1,5 @@
+id: M-DERIV-SIGN
+title: 导数符号表法
+related_knowledge:
+- K-FUN-MONO
+principle: 确定定义域、求导、找临界点、划分符号区间、核验端点与不可导点。

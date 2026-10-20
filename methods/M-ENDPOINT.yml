@@ -1,0 +1,5 @@
+id: M-ENDPOINT
+title: 端点和驻点比较
+related_knowledge:
+- K-FUN-EXTREMA
+principle: 闭区间上连续函数最值候选需包含内部驻点、不可导点与两个端点。
