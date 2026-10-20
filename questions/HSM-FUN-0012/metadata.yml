@@ -1,0 +1,21 @@
+schema_version: 1
+id: HSM-FUN-0012
+title: 给定半轴上的严格单调参数
+chapter: 函数与导数
+topics:
+- K-FUN-MONO
+- K-FUN-PARAM
+methods:
+- M-PARAM-CASES
+- M-DERIV-SIGN
+archetypes:
+- A-FUN-04
+type: solution
+difficulty: 3
+level: intermediate
+review_status: draft
+source:
+  kind: self_written
+  citation: HighSchoolMath V1.2 原创示例题
+  permission: self_authored
+  note: 数学命题与计算初步自检；尚未完成独立人工审核。

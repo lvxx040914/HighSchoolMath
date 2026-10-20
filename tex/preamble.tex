@@ -1,12 +1,23 @@
 \documentclass[a4paper,11pt,UTF8]{ctexart}
 \usepackage[margin=23mm,headheight=16pt,headsep=10pt,footskip=14mm]{geometry}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
-\usepackage{tcolorbox}
+\usepackage{tcolorbox}\usepackage{tikz,pgfplots}
 \tcbuselibrary{breakable,skins}
-\usepackage{fontspec,xcolor,fancyhdr,enumitem,hyperref,microtype}
-\setCJKmainfont{Noto Serif CJK SC}
-\setCJKsansfont{Noto Sans CJK SC}
-\setmainfont{Liberation Serif}
+\pgfplotsset{compat=1.18}
+\usepackage{fontspec,xcolor,fancyhdr,enumitem,hyperref,microtype,needspace}
+% Portable font selection: preserve the publication fonts when available.
+% macOS may not include Noto CJK or Liberation Serif by default.
+\IfFontExistsTF{Noto Serif CJK SC}{%
+  \setCJKmainfont{Noto Serif CJK SC}%
+}{%
+  \IfFontExistsTF{Songti SC}{\setCJKmainfont{Songti SC}}{\setCJKmainfont[BoldFont=FandolSong-Bold.otf]{FandolSong-Regular.otf}}%
+}
+\IfFontExistsTF{Noto Sans CJK SC}{%
+  \setCJKsansfont{Noto Sans CJK SC}%
+}{%
+  \IfFontExistsTF{PingFang SC}{\setCJKsansfont{PingFang SC}}{\setCJKsansfont[BoldFont=FandolHei-Bold.otf]{FandolHei-Regular.otf}}%
+}
+\IfFontExistsTF{Liberation Serif}{\setmainfont{Liberation Serif}}{\setmainfont[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf]{lmroman10-regular.otf}}
 \definecolor{primary}{HTML}{1C405E}
 \definecolor{muted}{HTML}{65727F}
 \definecolor{line}{HTML}{CBD8E0}
@@ -32,4 +43,11 @@
 \newcommand{\showquestion}[1]{\refstepcounter{exercise}\par\medskip\noindent\textbf{第\theexercise 题}\hfill{\footnotesize\color{muted}\texttt{#1}}\par\noindent\input{questions/#1/stem.tex}\par\smallskip}
 \newcounter{answer}
 \newcommand{\showanswer}[1]{\stepcounter{answer}\par\smallskip\noindent\textbf{第\theanswer 题}\hfill{\footnotesize\color{muted}\texttt{#1}}\par\noindent\input{questions/#1/solution.tex}\par\smallskip}
-\newcommand{\booktitle}{\begin{center}{\Large\bfseries\color{primary} 高中数学专题讲义}\par\vspace{5pt}{\huge\bfseries 函数的单调性}\par\vspace{7pt}{\small 函数与导数 · V1.0 试验样章 · \ifteacher 教师版\else 学生版\fi}\end{center}\vspace{12pt}}
+\newcommand{\booktitle}{\begin{center}{\Large\bfseries\color{primary} 高中数学专题讲义}\par\vspace{5pt}{\huge\bfseries 函数的单调性}\par\vspace{7pt}{\small 函数与导数 · V1.2 专题样章 · \ifteacher 教师版\else 学生版\fi}\end{center}\vspace{12pt}}
+
+\newcommand{\showworked}[1]{%
+  \begin{examplebox}[title=独立母题｜\texttt{#1}]
+  \noindent\input{questions/#1/stem.tex}\par
+  \standard\input{questions/#1/solution.tex}\par
+  \end{examplebox}
+}

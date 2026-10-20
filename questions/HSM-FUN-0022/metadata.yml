@@ -1,0 +1,19 @@
+schema_version: 1
+id: HSM-FUN-0022
+title: 指数与多项式乘积的极值
+chapter: 函数与导数
+topics:
+- K-FUN-MONO
+methods:
+- M-DERIV-SIGN
+archetypes:
+- A-CAL-03
+type: solution
+difficulty: 3
+level: intermediate
+review_status: draft
+source:
+  kind: self_written
+  citation: HighSchoolMath V1.2 原创示例题
+  permission: self_authored
+  note: 数学命题与计算初步自检；尚未完成独立人工审核。

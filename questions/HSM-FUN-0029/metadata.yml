@@ -1,0 +1,20 @@
+schema_version: 1
+id: HSM-FUN-0029
+title: 指数切线不等式
+chapter: 函数与导数
+topics:
+- K-FUN-MONO
+- K-FUN-INEQ
+methods:
+- M-AUX-FUNC
+archetypes:
+- A-FUN-07
+type: proof
+difficulty: 3
+level: intermediate
+review_status: draft
+source:
+  kind: self_written
+  citation: HighSchoolMath V1.2 原创示例题
+  permission: self_authored
+  note: 数学命题与计算初步自检；尚未完成独立人工审核。

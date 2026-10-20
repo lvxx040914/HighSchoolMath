@@ -85,13 +85,16 @@ def validate():
     try:
         topic = yaml.safe_load((ROOT/'config/monotonicity.yml').read_text(encoding='utf-8'))
         ids = topic['question_ids']
+        worked = topic.get('worked_ids', [])
     except (FileNotFoundError, KeyError, yaml.YAMLError) as exc:
         errors.append(f'config/monotonicity.yml: {exc}')
-        ids = []
-    if not isinstance(ids, list) or len(set(ids)) != len(ids):
-        errors.append('question list is not a unique array')
+        ids, worked = [], []
+    if not isinstance(ids, list) or not isinstance(worked, list) or not all(isinstance(v,str) for v in ids+worked):
+        errors.append('question lists must contain string IDs')
+    elif len(set(ids+worked)) != len(ids+worked):
+        errors.append('training/worked question lists overlap or have duplicates')
     else:
-        for qid in ids:
+        for qid in ids + worked:
             if qid not in found:
                 errors.append(f'question list references missing {qid}')
     if not found:
