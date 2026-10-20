@@ -1,4 +1,4 @@
-name: Validate and build sample PDFs
+name: Validate and build four mathematics PDFs
 on:
   push:
   pull_request:
@@ -20,5 +20,5 @@ jobs:
       - run: python tools/verify_pdf.py
       - uses: actions/upload-artifact@v4
         with:
-          name: monotonicity-sample-pdfs
-          path: dist/*.pdf
+          name: mathematics-v1-3-publications
+          path: dist/monotonicity_*.pdf

@@ -1,0 +1,21 @@
+schema_version: 1
+id: HSM-FUN-0040
+title: 三次方程不同实根的个数
+chapter: 函数与导数
+topics:
+- K-FUN-ROOTS
+- K-FUN-EXTREMA
+methods:
+- M-EXT-INTERVAL
+- M-DERIV-SIGN
+archetypes:
+- A-FUN-09
+type: solution
+difficulty: 4
+level: advanced
+review_status: draft
+source:
+  kind: self_written
+  citation: V1.0 手写示范题迁移（非新增数学题）
+  permission: self_authored
+  note: 保留原讲义示范例题内容，未经过独立数学人工审稿。

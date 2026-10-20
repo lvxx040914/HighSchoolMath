@@ -1,0 +1,20 @@
+schema_version: 1
+id: HSM-FUN-0037
+title: 复合对数函数的单调性
+chapter: 函数与导数
+topics:
+- K-FUN-COMPOSITE
+- K-FUN-MONO
+methods:
+- M-DEFINITION-DIFF
+archetypes:
+- A-FUN-03
+type: proof
+difficulty: 2
+level: foundation
+review_status: draft
+source:
+  kind: self_written
+  citation: V1.0 手写示范题迁移（非新增数学题）
+  permission: self_authored
+  note: 保留原讲义示范例题内容，未经过独立数学人工审稿。

@@ -1,68 +1,53 @@
-# HighSchoolMath｜高中数学讲义与题库
+# HighSchoolMath｜高中数学系统讲义与题库
 
-> V1.2：单调性高质量专题（阶段性草稿）；继承 V1.1 知识、方法与题型目录。
+> **V1.3：单调性专题 · 40 条独立题目记录 · 四种 PDF 产品 · 可复现组卷**。
+> 课程知识目录仍是规划架构，不代表全高中已完稿；全部题目仍为 `draft`，待独立数学人工审核。
 
-本项目坚持「一份结构化数学内容，多种输出」：**知识点库—方法库—独立题库—讲义编译** 四层解耦，形成便于审核、长期维护的高中数学出版系统。
+本项目遵守 **知识点—解题方法—典型题型—独立题库—出版组合** 的可维护模式。同一道题可被讲义、习题册和按条件组卷重用，且使用不可变 ID 与来源字段。
 
-## 获取内容
+## 快速开始
 
-- [完整项目规范](docs/PROJECT_SPEC.md)
-- [V1.1 数学内容编写与审核标准](docs/EDITORIAL_STANDARD_V1_1.md)
-- [高中数学知识地图（11 领域、93 主题）](docs/KNOWLEDGE_ATLAS.md)
-- [解题方法与典型题型图谱（42 方法、50 题型）](docs/METHOD_AND_ARCHETYPE_ATLAS.md)
-- [课程标准对齐说明](docs/CURRICULUM_ALIGNMENT.md)
-- [内容模板与审稿清单](docs/REVIEW_AND_CONTENT_TEMPLATES.md)
-- [协作与 AI 编辑约束](AGENTS.md)
-- [V1.2 发布说明与验收状态](docs/V1_2_RELEASE_NOTES.md)
-- [V1.1 更新说明](docs/V1_1_RELEASE_NOTES.md)
-- [内容与数学写作规范](docs/EDITORIAL_GUIDE.md)
-- [题目数据规范](docs/QUESTION_SCHEMA.md)
-- [分期实施与验收](docs/ROADMAP.md)
-- [样章源码](lectures/functions/monotonicity.tex)
-- [练习题清单](config/monotonicity.yml)
-
-## 运行（需 XeLaTeX / latexmk / Python ≥ 3.10）
+需求：Python ≥ 3.10、PyYAML、XeLaTeX、latexmk。PDF 内容检查需要 `pdftotext`（Mac 可用 `brew install poppler`）。中文排版优先使用 Noto，Mac 使用 Songti / PingFang，缺失时可使用 Fandol 回退。
 
 ```bash
-python -m pip install -r requirements.txt
-python tools/validate.py
-python tools/validate_catalog.py
-python tools/render_catalog.py --check
-python -m unittest discover -s tests -v
-python tools/build.py --edition all
+python3 -m pip install -r requirements.txt
+make check
+make build
+make pdfcheck
 ```
 
-预期生成：`dist/monotonicity_student.pdf`（学生版）、`dist/monotonicity_teacher.pdf`（教师版）。学生版含理论与完整示范例题、专题训练不含答案；教师版在末尾附独立答案详解。输出由同一批题目生成。
+默认生成四种 PDF（`dist/`）：
 
-若没有 `latexmk`，可在项目根目录直接运行：
+| 产品 | 文件名 | 内容 |
+|---|---|---|
+| 讲义版 | `monotonicity_lecture.pdf` | 理论、目录、10 道带完整解答的示范例题、30 道训练题；不含训练题解答 |
+| 专项习题册 | `monotonicity_workbook.pdf` | 独立题干，提供解题书写空间 |
+| 教师解析版 | `monotonicity_teacher.pdf` | 讲义正文、10 道示范例题和 30 道训练题的详细解答 |
+| 答案速查册 | `monotonicity_answer_key.pdf` | 与习题册题号一致，提供简明结论 |
+
+兼容旧脚本时仍保留 `monotonicity_student.pdf`（讲义版副本）以及 `make student`。
+
+## 按条件自动组卷
+
+示例：从单调性知识点中抽取 6 道、难度 2–4、题型为解答题的练习，固定随机种子保证下次运行相同题单。
 
 ```bash
-xelatex -interaction=nonstopmode -halt-on-error -output-directory=dist tex/student.tex
-xelatex -interaction=nonstopmode -halt-on-error -output-directory=dist tex/student.tex
+python3 tools/compose.py --topic K-FUN-MONO --min-difficulty 2 --max-difficulty 4 --type solution --count 6 --seed 2026 --slug monotonicity_practice --out config/monotonicity_practice.yml
+python3 tools/build.py --config config/monotonicity_practice.yml --edition workbook
+python3 tools/build.py --config config/monotonicity_practice.yml --edition answer_key
 ```
 
-上述手工方式必须先运行一次 `python tools/build.py --generate-only` 以生成索引文件。
+输出 `dist/monotonicity_practice_workbook.pdf` 与 `dist/monotonicity_practice_answer_key.pdf`。可加 `--method M-DERIV-SIGN`、`--archetype A-FUN-04`、`--level intermediate`，或 `--include-worked` 将示范题放入可选池。若匹配数量不足，程序明确报错，不自动放宽条件。详细命令见 [出版与组卷说明](docs/PUBLICATION_GUIDE.md)。
 
-## V1.1 的新增内容
+**当前边界：** 自动组卷只针对已录入的单调性专题题池。自定义 YAML 仅能构建独立习题册和答案速查册；讲义与教师版目前包含专门编写的单调性正文，不会把不同知识领域误配到正文里。运行自定义构建后会恢复默认生成索引，不污染已提交的题单文件。
 
-- 结构化编辑目录：`catalog/knowledge_map.yml`、`catalog/methods.yml`、`catalog/archetypes.yml`，覆盖 11 个领域、93 个待建设主题、42 种方法、50 类题型。所有条目均是 **规划**，不代表已有同数量的完整讲义、解答或复核。
-- 自动导出的浏览目录：`docs/KNOWLEDGE_ATLAS.md`、`docs/METHOD_AND_ARCHETYPE_ATLAS.md`；修改 YAML 后运行 `python tools/render_catalog.py` 重建。
-- 10 道 V1.0 练习题增加 `archetypes` 关联，保留原 `K-*`、`M-*`、题目 ID 与审核状态。
-- 增加跨目录完整性、引用、依赖环、旧实体别名校验及负向单元测试。
-- 后续重点：独立数学审稿、完善讲义正文与真题许可核验。
+## 内容与技术规范
 
-## V1.2 专题产出
+- [项目规范](docs/PROJECT_SPEC.md) · [数学编写规范](docs/EDITORIAL_STANDARD_V1_1.md)
+- [知识目录](docs/KNOWLEDGE_ATLAS.md) · [解题方法与题型目录](docs/METHOD_AND_ARCHETYPE_ATLAS.md)
+- [题目字段规范](docs/QUESTION_SCHEMA.md) · [组卷与四版本出版说明](docs/PUBLICATION_GUIDE.md)
+- [V1.3 更新记录](docs/V1_3_RELEASE_NOTES.md) · [后续路线](docs/ROADMAP.md)
 
-- 1 篇扩展样章：单调性逻辑关系与完整证明、反例、分段跨点判定、典型母题、导数与参数充要性、根数问题，以及自制 PGFPlots 函数图。
-- 题库共 **34 道独立题**：原有 10 道 + 新增 24 道（其中 4 道以 `\showworked` 在正文中展示，20 道进入训练）。
-- 当前训练题单 30 道，全部来自独立题库，学生版隐藏训练答案，教师版附完整解析。
-- 同一题库生成学生版 / 教师版；自动执行题目完整性及版权字段检查。
-- `README`、规范文档、测试、GitHub Actions 构建工作流。
+## 内容质量边界
 
-## 当前边界
-
-这是一套**可用的最小出版骨架**，不是声称已完成的高中数学完整题库。题目以项目示例自拟或既有示例为来源，题目版权字段不等于独立数学审稿。所有 34 道题仍处于 `draft`；上线、公开宣传为高质量精选或出版前，需完成独立数学审核、版权和逐页排版复核。
-
-## GitHub 仓库
-
-项目地址：<https://github.com/lvxx040914/HighSchoolMath>。V1.1 已合并到 `main`。V1.2 必须先在单独分支验证后才可合并；本地升级包不意味着远程仓库已同步。项目目前未选择统一开源许可证，详见[项目规范](docs/PROJECT_SPEC.md)。
+V1.3 将以前嵌在 `monotonicity.tex` 内的六道示范例题迁入 `questions/HSM-FUN-0035` 至 `HSM-FUN-0040`。这是**结构迁移，不是新增六道原创数学题**。题库累计 40 条，10 道示范、30 道训练，尚未完成独立人工复核。自动编译、元数据测试和 PDF 隔离测试不是数学正确性证书。公开转载外部真题前须核查许可。

@@ -13,3 +13,5 @@
 ## V1.1 协作流程
 
 先读 `AGENTS.md` 与 `docs/EDITORIAL_STANDARD_V1_1.md`。目录条目只编辑 `catalog/*.yml`，然后执行 `python tools/render_catalog.py` 并提交同步更新的 `docs/*ATLAS.md`。新增题目建议填写 `archetypes`，审稿状态保留 `draft`，人工复核后再升级。每个 PR 应附本次涉及的知识点/方法/题型 ID 及测试命令。
+
+V1.3：示范例题也须独立存入题库并提供 `answer.tex`。提交前运行 `make check && make build && make pdfcheck`。不要将自动构建视为数学人工审核。

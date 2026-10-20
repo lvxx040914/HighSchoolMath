@@ -78,7 +78,7 @@ def validate():
                     errors.append(f'{qid}: missing source.{key}')
             if source.get('kind') == 'reference_only':
                 errors.append(f'{qid}: reference-only problem cannot be redistributed')
-        for name in ('stem.tex','solution.tex'):
+        for name in ('stem.tex','solution.tex','answer.tex'):
             t = folder/name
             if not t.is_file() or not t.read_text(encoding='utf-8').strip():
                 errors.append(f'{qid}: missing or empty {name}')
