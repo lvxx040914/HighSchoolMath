@@ -1,0 +1,607 @@
+schema_version: 1
+edition: v1.1
+archetypes:
+- id: A-PRE-01
+  title: 集合参数与范围关系
+  topics:
+  - T-PRE-01
+  - T-PRE-03
+  methods:
+  - MT-SET-REGION
+  - MT-LOGIC-PROOF
+  variant_axes:
+  - 全集和补集条件
+  - 区间端点开闭
+  pitfall: 忽略空集
+  status: planned
+- id: A-PRE-02
+  title: 真假命题与充要性
+  topics:
+  - T-PRE-02
+  - T-PRE-03
+  methods:
+  - MT-LOGIC-PROOF
+  - MT-LOGIC-COUNTER
+  variant_axes:
+  - 量词变化
+  - 逆否命题
+  pitfall: 充分必要方向混淆
+  status: planned
+- id: A-PRE-03
+  title: 一元二次不等式与参数
+  topics:
+  - T-PRE-05
+  - T-PRE-06
+  methods:
+  - MT-INEQ-SIGN
+  - MT-INEQ-PARAM
+  variant_axes:
+  - 二次项退化
+  - 根重合
+  pitfall: 漏掉二次项为零
+  status: planned
+- id: A-PRE-04
+  title: 基本不等式求极值
+  topics:
+  - T-PRE-07
+  methods:
+  - MT-INEQ-AMGM
+  variant_axes:
+  - 定和与定积
+  - 边界与取等
+  pitfall: 等号不可取
+  status: planned
+- id: A-FUN-01
+  title: 函数定义域值域与复合
+  topics:
+  - T-FUN-01
+  - T-FUN-08
+  methods:
+  - MT-FUN-COMPO
+  - MT-FUN-TRANSFORM
+  variant_axes:
+  - 定义域包含限制
+  - 内外函数交换
+  pitfall: 复合定义域遗漏
+  status: planned
+- id: A-FUN-02
+  title: 定义法证明单调性
+  topics:
+  - T-FUN-03
+  methods:
+  - MT-FUN-DIFF
+  variant_axes:
+  - 分式改根式
+  - 区间含端点
+  pitfall: 跨区间比较
+  status: planned
+- id: A-FUN-03
+  title: 函数单调区间确定
+  topics:
+  - T-FUN-03
+  - T-CAL-02
+  methods:
+  - MT-CAL-SIGN
+  - MT-FUN-PIECE
+  variant_axes:
+  - 不可导点
+  - 复合结构
+  pitfall: 单调区间越过断点
+  status: planned
+- id: A-FUN-04
+  title: 已知单调性求参数
+  topics:
+  - T-FUN-11
+  - T-CAL-08
+  methods:
+  - MT-CAL-NECSUF
+  - MT-CAL-BOUND
+  variant_axes:
+  - 给定区间变化
+  - 严格与非严格要求
+  pitfall: 缺少充分性
+  status: planned
+- id: A-FUN-05
+  title: 含参数函数单调分类
+  topics:
+  - T-FUN-11
+  - T-CAL-07
+  methods:
+  - MT-CAL-CRITICAL
+  - MT-CAL-SIGN
+  variant_axes:
+  - 重根临界值
+  - 定义域随参变化
+  pitfall: 遗漏参数边界
+  status: planned
+- id: A-FUN-06
+  title: 函数对称周期和零点
+  topics:
+  - T-FUN-04
+  - T-FUN-09
+  methods:
+  - MT-FUN-TRANSFORM
+  - MT-FUN-ROOT
+  variant_axes:
+  - 分段函数
+  - 周期条件
+  pitfall: 在不连续点使用介值
+  status: planned
+- id: A-FUN-07
+  title: 构造函数证明不等式
+  topics:
+  - T-FUN-12
+  - T-CAL-05
+  methods:
+  - MT-FUN-AUX
+  - MT-CAL-ENDPOINT
+  variant_axes:
+  - 比较对象变化
+  - 等号位置变化
+  pitfall: 未查定义域
+  status: planned
+- id: A-FUN-08
+  title: 函数最值与端点
+  topics:
+  - T-FUN-03
+  - T-CAL-03
+  methods:
+  - MT-CAL-ENDPOINT
+  - MT-CAL-SIGN
+  variant_axes:
+  - 闭区间改开区间
+  - 含参数驻点
+  pitfall: 漏端点
+  status: planned
+- id: A-FUN-09
+  title: 函数方程实根个数
+  topics:
+  - T-FUN-09
+  - T-CAL-06
+  methods:
+  - MT-FUN-ROOT
+  - MT-CAL-SIGN
+  variant_axes:
+  - 水平线变化
+  - 端点极限变化
+  pitfall: 根的重数当不同根数
+  status: planned
+- id: A-TRI-01
+  title: 三角式化简与求值
+  topics:
+  - T-TRI-03
+  - T-TRI-06
+  methods:
+  - MT-TRI-IDENT
+  variant_axes:
+  - 已知范围变化
+  - 分母零点排除
+  pitfall: 变换丢失定义域
+  status: planned
+- id: A-TRI-02
+  title: 三角函数图像与参数
+  topics:
+  - T-TRI-04
+  methods:
+  - MT-TRI-PHASE
+  variant_axes:
+  - 相位变化
+  - 图像平移缩放
+  pitfall: 角度与弧度混用
+  status: planned
+- id: A-TRI-03
+  title: 三角函数区间最值
+  topics:
+  - T-TRI-05
+  methods:
+  - MT-TRI-PHASE
+  - MT-CAL-ENDPOINT
+  variant_axes:
+  - 指定区间变化
+  - 含相位参数
+  pitfall: 未核可达极值点
+  status: planned
+- id: A-TRI-04
+  title: 解三角形分类与多解
+  topics:
+  - T-TRI-07
+  - T-TRI-08
+  methods:
+  - MT-TRI-LAW
+  variant_axes:
+  - SSA两解情况
+  - 边角取值约束
+  pitfall: 遗漏钝角解
+  status: planned
+- id: A-VEC-01
+  title: 向量模夹角与数量积
+  topics:
+  - T-VEC-03
+  methods:
+  - MT-VEC-DOT
+  variant_axes:
+  - 含参数角度
+  - 几何最值
+  pitfall: 模为零仍除法
+  status: planned
+- id: A-VEC-02
+  title: 平面向量共线与垂直
+  topics:
+  - T-VEC-04
+  methods:
+  - MT-VEC-COORD
+  - MT-VEC-DOT
+  variant_axes:
+  - 基底更换
+  - 坐标参数
+  pitfall: 共线零向量特殊性
+  status: planned
+- id: A-VEC-03
+  title: 向量与三角形几何
+  topics:
+  - T-VEC-05
+  methods:
+  - MT-VEC-COORD
+  - MT-TRI-LAW
+  variant_axes:
+  - 重心中点结构
+  - 长度极值
+  pitfall: 几何位置关系未证
+  status: planned
+- id: A-VEC-04
+  title: 复数模与复平面轨迹
+  topics:
+  - T-VEC-06
+  - T-VEC-07
+  methods:
+  - MT-CPLX-MOD
+  variant_axes:
+  - 共轭关系
+  - 模的轨迹
+  pitfall: 把复数直接比较大小
+  status: planned
+- id: A-SEQ-01
+  title: 等差等比数列参数确定
+  topics:
+  - T-SEQ-02
+  - T-SEQ-03
+  methods:
+  - MT-SEQ-REC
+  variant_axes:
+  - 已知前n项和
+  - 负公比情况
+  pitfall: 通项推导漏初值
+  status: planned
+- id: A-SEQ-02
+  title: 递推数列求通项
+  topics:
+  - T-SEQ-04
+  methods:
+  - MT-SEQ-REC
+  variant_axes:
+  - 非齐次递推
+  - 递推式变换
+  pitfall: 除以可能为零项
+  status: planned
+- id: A-SEQ-03
+  title: 数列求和方法选择
+  topics:
+  - T-SEQ-05
+  methods:
+  - MT-SEQ-SUM
+  variant_axes:
+  - 错位相减
+  - 裂项望远镜
+  pitfall: 首末项漏写
+  status: planned
+- id: A-SEQ-04
+  title: 数列单调性与极值
+  topics:
+  - T-SEQ-06
+  methods:
+  - MT-SEQ-MONO
+  variant_axes:
+  - 差法与比法
+  - 参数分类
+  pitfall: 比值法正数条件未证
+  status: planned
+- id: A-SEQ-05
+  title: 数列不等式与估计
+  topics:
+  - T-SEQ-07
+  methods:
+  - MT-INEQ-AMGM
+  - MT-SEQ-MONO
+  variant_axes:
+  - 上界变化
+  - 递推有界性
+  pitfall: 放缩方向错误
+  status: planned
+- id: A-SEQ-06
+  title: 数学归纳法证明
+  topics:
+  - T-SEQ-08
+  methods:
+  - MT-SEQ-INDUCT
+  variant_axes:
+  - 起始n变化
+  - 加强归纳命题
+  pitfall: 假设没有作用
+  status: planned
+- id: A-STE-01
+  title: 线面平行垂直判定
+  topics:
+  - T-STE-02
+  - T-STE-03
+  methods:
+  - MT-STE-SYN
+  variant_axes:
+  - 辅助平面选择
+  - 垂足位置
+  pitfall: 逻辑条件不充分
+  status: planned
+- id: A-STE-02
+  title: 空间角求值
+  topics:
+  - T-STE-06
+  - T-STE-07
+  methods:
+  - MT-STE-VECTOR
+  - MT-STE-PROJ
+  variant_axes:
+  - 法向量取向
+  - 特殊直角情形
+  pitfall: 夹角取补角
+  status: planned
+- id: A-STE-03
+  title: 空间点线面距离
+  topics:
+  - T-STE-08
+  methods:
+  - MT-STE-VECTOR
+  - MT-STE-PROJ
+  variant_axes:
+  - 平面参数变化
+  - 体积等积法
+  pitfall: 投影方向不正确
+  status: planned
+- id: A-STE-04
+  title: 立体几何证明与计算混合
+  topics:
+  - T-STE-03
+  - T-STE-05
+  methods:
+  - MT-STE-SYN
+  - MT-STE-VECTOR
+  variant_axes:
+  - 选坐标原点
+  - 证明线面关系
+  pitfall: 坐标未满足几何约束
+  status: planned
+- id: A-ANA-01
+  title: 直线圆方程与参数
+  topics:
+  - T-ANA-01
+  - T-ANA-03
+  methods:
+  - MT-ANA-COORD
+  variant_axes:
+  - 相切条件
+  - 斜率不存在
+  pitfall: 无斜率直线被遗漏
+  status: planned
+- id: A-ANA-02
+  title: 动点轨迹方程
+  topics:
+  - T-ANA-04
+  methods:
+  - MT-ANA-COORD
+  variant_axes:
+  - 距离条件
+  - 参数消元
+  pitfall: 平方产生赘根
+  status: planned
+- id: A-ANA-03
+  title: 圆锥曲线定义与离心率
+  topics:
+  - T-ANA-05
+  - T-ANA-06
+  - T-ANA-07
+  methods:
+  - MT-ANA-CONIC
+  variant_axes:
+  - 焦点位置
+  - 退化参数
+  pitfall: 只代方程不核轨迹
+  status: planned
+- id: A-ANA-04
+  title: 弦长与交点条件
+  topics:
+  - T-ANA-08
+  methods:
+  - MT-ANA-VIETA
+  variant_axes:
+  - 切线临界
+  - 二次项系数退化
+  pitfall: 判别式未核
+  status: planned
+- id: A-ANA-05
+  title: 定点定值及参数消元
+  topics:
+  - T-ANA-09
+  methods:
+  - MT-ANA-INVARIANT
+  - MT-ANA-VIETA
+  variant_axes:
+  - 斜率参数
+  - 纵坐标参数
+  pitfall: 形式恒定但点不存在
+  status: planned
+- id: A-CAL-01
+  title: 导数几何意义与切线
+  topics:
+  - T-CAL-01
+  - T-CAL-04
+  methods:
+  - MT-CAL-SIGN
+  variant_axes:
+  - 切点未知
+  - 导数零点
+  pitfall: 把割线当切线
+  status: planned
+- id: A-CAL-02
+  title: 导数单调性及参数讨论
+  topics:
+  - T-CAL-02
+  - T-CAL-07
+  methods:
+  - MT-CAL-SIGN
+  - MT-CAL-CRITICAL
+  variant_axes:
+  - 重根
+  - 定义域变化
+  pitfall: 漏临界值
+  status: planned
+- id: A-CAL-03
+  title: 极值最值与参数
+  topics:
+  - T-CAL-03
+  methods:
+  - MT-CAL-ENDPOINT
+  variant_axes:
+  - 驻点进入区间
+  - 闭开区间变化
+  pitfall: 只比驻点不比端点
+  status: planned
+- id: A-CAL-04
+  title: 导数与不等式恒成立
+  topics:
+  - T-CAL-05
+  - T-CAL-08
+  methods:
+  - MT-CAL-NECSUF
+  - MT-FUN-AUX
+  variant_axes:
+  - 量词改存在
+  - 等号判定
+  pitfall: 偷换存在和任意
+  status: planned
+- id: A-CAL-05
+  title: 导数研究零点分布
+  topics:
+  - T-CAL-06
+  methods:
+  - MT-FUN-ROOT
+  - MT-CAL-SIGN
+  variant_axes:
+  - 双零点与相切
+  - 极限变号
+  pitfall: 只看图不证存在
+  status: planned
+- id: A-STA-01
+  title: 分步分类计数
+  topics:
+  - T-STA-05
+  methods:
+  - MT-STA-COUNT
+  variant_axes:
+  - 限制条件变化
+  - 分组排列
+  pitfall: 分类重叠
+  status: planned
+- id: A-STA-02
+  title: 条件概率与独立事件
+  topics:
+  - T-STA-01
+  - T-STA-06
+  methods:
+  - MT-STA-EVENT
+  variant_axes:
+  - 独立性给定
+  - 不放回抽取
+  pitfall: 概率分母为零
+  status: planned
+- id: A-STA-03
+  title: 随机变量分布列与期望
+  topics:
+  - T-STA-07
+  - T-STA-08
+  methods:
+  - MT-STA-DIST
+  variant_axes:
+  - 分布参数变化
+  - 加权收益
+  pitfall: 概率未归一
+  status: planned
+- id: A-STA-04
+  title: 正态分布与统计推断
+  topics:
+  - T-STA-09
+  - T-STA-04
+  methods:
+  - MT-STA-EST
+  variant_axes:
+  - 参数未知
+  - 数据分组
+  pitfall: 样本外推过度
+  status: planned
+- id: A-STA-05
+  title: 回归相关与数据解释
+  topics:
+  - T-STA-10
+  methods:
+  - MT-STA-EST
+  variant_axes:
+  - 异常值
+  - 相关方向
+  pitfall: 相关不等于因果
+  status: planned
+- id: A-MOD-01
+  title: 实际模型建立与检验
+  topics:
+  - T-MOD-01
+  - T-MOD-02
+  - T-MOD-05
+  methods:
+  - MT-MOD-MODEL
+  - MT-MOD-VALID
+  variant_axes:
+  - 目标函数变换
+  - 限制条件变化
+  pitfall: 量纲不一致
+  status: planned
+- id: A-MOD-02
+  title: 统计数据建模
+  topics:
+  - T-MOD-03
+  methods:
+  - MT-STA-EST
+  - MT-MOD-VALID
+  variant_axes:
+  - 样本切分
+  - 不确定性区间
+  pitfall: 拟合误差当泛化能力
+  status: planned
+- id: A-EXT-01
+  title: 构造不变量与极端法
+  topics:
+  - T-EXT-07
+  methods:
+  - MT-EXT-INVARIANT
+  variant_axes:
+  - 操作规则变化
+  - 边界状态
+  pitfall: 有限验证当证明
+  status: planned
+- id: A-EXT-02
+  title: 竞赛几何构造
+  topics:
+  - T-EXT-04
+  - T-EXT-08
+  methods:
+  - MT-EXT-CONSTRUCT
+  variant_axes:
+  - 辅助线变化
+  - 对称变换
+  pitfall: 构造对象不满足题设
+  status: planned

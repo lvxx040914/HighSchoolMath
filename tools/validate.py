@@ -5,6 +5,10 @@ import re
 import sys
 from pathlib import Path
 import yaml
+try:
+    from .validate_catalog import validate_catalog
+except ImportError:  # python tools/validate.py
+    from validate_catalog import validate_catalog
 
 ROOT = Path(__file__).resolve().parents[1]
 PATTERN = re.compile(r'^HSM-[A-Z]{3}-\d{4}$')
@@ -92,6 +96,8 @@ def validate():
                 errors.append(f'question list references missing {qid}')
     if not found:
         errors.append('question bank is empty')
+    catalog_errors, _ = validate_catalog(ROOT)
+    errors.extend(catalog_errors)
     return errors, len(found)
 
 
