@@ -12,6 +12,8 @@ jobs:
           python-version: '3.11'
       - run: pip install -r requirements.txt
       - run: python tools/validate.py
+      - run: python tools/validate_review.py
+      - run: python tools/report_review.py --check
       - run: python tools/validate_catalog.py
       - run: python tools/render_catalog.py --check
       - run: python -m unittest discover -s tests -v
