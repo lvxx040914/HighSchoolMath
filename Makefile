@@ -1,5 +1,5 @@
 PYTHON ?= python3
-.PHONY: validate catalog check report test generate student teacher build pdfcheck clean
+.PHONY: validate catalog check report test generate student lecture workbook teacher answer_key build pdfcheck clean
 
 validate:
 	$(PYTHON) tools/validate.py
@@ -10,17 +10,17 @@ test:
 generate:
 	$(PYTHON) tools/build.py --generate-only
 
-student:
-	$(PYTHON) tools/build.py --edition student
-
-teacher:
-	$(PYTHON) tools/build.py --edition teacher
+student lecture workbook teacher answer_key:
+	$(PYTHON) tools/build.py --edition $@
 
 build:
 	$(PYTHON) tools/build.py --edition all
 
 clean:
-	latexmk -C -outdir=dist tex/student.tex tex/teacher.tex
+	latexmk -C -outdir=dist -jobname=monotonicity_lecture tex/student.tex
+	latexmk -C -outdir=dist -jobname=monotonicity_workbook tex/workbook.tex
+	latexmk -C -outdir=dist -jobname=monotonicity_teacher tex/teacher.tex
+	latexmk -C -outdir=dist -jobname=monotonicity_answer_key tex/answer_key.tex
 
 catalog:
 	$(PYTHON) tools/render_catalog.py

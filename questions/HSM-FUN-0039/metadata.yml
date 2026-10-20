@@ -1,0 +1,21 @@
+schema_version: 1
+id: HSM-FUN-0039
+title: 含参数三次函数的单调性分类
+chapter: 函数与导数
+topics:
+- K-FUN-MONO
+- K-FUN-PARAM
+methods:
+- M-PARAM-CASES
+- M-DERIV-SIGN
+archetypes:
+- A-FUN-05
+type: solution
+difficulty: 4
+level: advanced
+review_status: draft
+source:
+  kind: self_written
+  citation: V1.0 手写示范题迁移（非新增数学题）
+  permission: self_authored
+  note: 保留原讲义示范例题内容，未经过独立数学人工审稿。

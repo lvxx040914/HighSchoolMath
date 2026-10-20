@@ -57,3 +57,11 @@ archetypes:
 - `question_ids`：训练题，生成学生版题干与教师版答案；二者必须无交集、不可重复。
 - `review_status` 不允许由构建工具自动升级；新增 24 道题全部暂列 `draft`。
 - 未来可进一步将 V1.0 手写的 6 道示范例题迁移到独立题库（暂不强行删除旧内容）。
+
+
+## V1.3 新要求
+
+- 每个题目目录必须包含 `answer.tex`（只给结论）与 `solution.tex`（完整证明或解答），两者不能用同一份内容充当。
+- `worked_ids` 下的所有题目与 `question_ids` 一样拥有 `metadata.yml / stem.tex / solution.tex / answer.tex`，讲义只通过 `\showworked{ID}` 引用，不得直接粘贴整道例题。
+- 自定义组卷由 `tools/compose.py` 生成 YAML 题单；数量不足时退出并提示，不静默放宽条件。
+- 所有题目仍保持 `draft` 直到独立人工审稿；自动化校验不得提高审核等级。

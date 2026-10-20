@@ -4,7 +4,7 @@
 \usepackage{tcolorbox}\usepackage{tikz,pgfplots}
 \tcbuselibrary{breakable,skins}
 \pgfplotsset{compat=1.18}
-\usepackage{fontspec,xcolor,fancyhdr,enumitem,hyperref,microtype,needspace}
+\usepackage{fontspec,xcolor,fancyhdr,enumitem,hyperref,microtype,needspace,multicol}
 % Portable font selection: preserve the publication fonts when available.
 % macOS may not include Noto CJK or Liberation Serif by default.
 \IfFontExistsTF{Noto Serif CJK SC}{%
@@ -29,7 +29,8 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small\color{muted} HighSchoolMath · 函数与导数}
-\fancyhead[R]{\small\color{muted}\ifteacher 教师版\else 学生版\fi}
+\providecommand{\EditionName}{\ifteacher 教师版\else 学生版\fi}
+\fancyhead[R]{\small\color{muted}\EditionName}
 \fancyfoot[C]{\small\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \setlength{\emergencystretch}{1em}
@@ -43,11 +44,33 @@
 \newcommand{\showquestion}[1]{\refstepcounter{exercise}\par\medskip\noindent\textbf{第\theexercise 题}\hfill{\footnotesize\color{muted}\texttt{#1}}\par\noindent\input{questions/#1/stem.tex}\par\smallskip}
 \newcounter{answer}
 \newcommand{\showanswer}[1]{\stepcounter{answer}\par\smallskip\noindent\textbf{第\theanswer 题}\hfill{\footnotesize\color{muted}\texttt{#1}}\par\noindent\input{questions/#1/solution.tex}\par\smallskip}
-\newcommand{\booktitle}{\begin{center}{\Large\bfseries\color{primary} 高中数学专题讲义}\par\vspace{5pt}{\huge\bfseries 函数的单调性}\par\vspace{7pt}{\small 函数与导数 · V1.2 专题样章 · \ifteacher 教师版\else 学生版\fi}\end{center}\vspace{12pt}}
+\newcommand{\booktitle}{\begin{center}{\Large\bfseries\color{primary} 高中数学专题讲义}\par\vspace{5pt}{\huge\bfseries 函数的单调性}\par\vspace{7pt}{\small 函数与导数 · V1.3 专题讲义 · \ifteacher 教师版\else 学生版\fi}\end{center}\vspace{12pt}}
 
-\newcommand{\showworked}[1]{%
-  \begin{examplebox}[title=独立母题｜\texttt{#1}]
-  \noindent\input{questions/#1/stem.tex}\par
-  \standard\input{questions/#1/solution.tex}\par
+\NewDocumentCommand{\showworked}{O{示范母题} m}{%
+  \begin{examplebox}[title={#1\hfill\texttt{#2}}]
+  \noindent\input{questions/#2/stem.tex}\par
+  \standard\input{questions/#2/solution.tex}\par
   \end{examplebox}
+}
+
+% Generated lesson metadata and short-answer renderer.
+\input{tex/generated/selection_info.tex}
+\newcounter{shortanswer}
+\newcommand{\showshortanswer}[1]{%
+  \stepcounter{shortanswer}\par\noindent
+  \textbf{\theshortanswer.}\quad\texttt{#1}\quad
+  \input{questions/#1/answer.tex}\par\smallskip
+}
+\newcommand{\producttitle}[1]{%
+  \begin{center}
+    {\large\bfseries\color{primary} HighSchoolMath\,·\,函数与导数}\par\vspace{6pt}
+    {\LARGE\bfseries #1}\par\vspace{7pt}
+    {\small \SelectionTitle\quad|\quad 共 \TrainingCount\ 道题\quad|\quad V1.3}
+  \end{center}\bigskip
+}
+
+% Worksheet format: show the item, then leave ruled-free space for proof or calculation.
+\newcommand{\showworkbookquestion}[2]{%
+  \Needspace{7\baselineskip}\showquestion{#1}%
+  \par\vspace{#2mm}\par
 }

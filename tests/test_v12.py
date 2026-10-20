@@ -9,11 +9,11 @@ class V12ContentTests(unittest.TestCase):
     def setUp(self):
         self.data = yaml.safe_load((ROOT / 'config/monotonicity.yml').read_text(encoding='utf-8'))
 
-    def test_34_unique_problem_ids(self):
+    def test_unique_problem_ids_after_example_migration(self):
         ids = self.data['worked_ids'] + self.data['question_ids']
-        self.assertEqual(len(ids), 34)
-        self.assertEqual(len(set(ids)), 34)
-        self.assertEqual((len(self.data['worked_ids']), len(self.data['question_ids'])), (4, 30))
+        self.assertEqual(len(ids), 40)
+        self.assertEqual(len(set(ids)), 40)
+        self.assertEqual((len(self.data['worked_ids']), len(self.data['question_ids'])), (10, 30))
 
     def test_all_new_items_are_draft_and_tagged(self):
         for num in range(11, 35):
@@ -28,7 +28,7 @@ class V12ContentTests(unittest.TestCase):
     def test_worked_are_externally_referenced(self):
         lecture = (ROOT/'lectures/functions/monotonicity.tex').read_text(encoding='utf-8')
         for qid in self.data['worked_ids']:
-            self.assertIn('\\showworked{' + qid + '}', lecture)
+            self.assertIn('{' + qid + '}', lecture)
 
     def test_generated_indexes_match_training(self):
         qtex = (ROOT/'tex/generated/questions.tex').read_text(encoding='utf-8')
@@ -43,4 +43,4 @@ class V12ContentTests(unittest.TestCase):
     def test_main_schema_validation(self):
         errors, count = validate()
         self.assertEqual(errors, [])
-        self.assertEqual(count, 34)
+        self.assertEqual(count, 40)

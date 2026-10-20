@@ -1,0 +1,21 @@
+schema_version: 1
+id: HSM-FUN-0038
+title: 对数不等式与取等条件
+chapter: 函数与导数
+topics:
+- K-FUN-INEQ
+- K-FUN-MONO
+methods:
+- M-AUX-FUNC
+- M-DERIV-SIGN
+archetypes:
+- A-FUN-07
+type: proof
+difficulty: 3
+level: intermediate
+review_status: draft
+source:
+  kind: self_written
+  citation: V1.0 手写示范题迁移（非新增数学题）
+  permission: self_authored
+  note: 保留原讲义示范例题内容，未经过独立数学人工审稿。

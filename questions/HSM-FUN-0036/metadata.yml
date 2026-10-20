@@ -1,0 +1,20 @@
+schema_version: 1
+id: HSM-FUN-0036
+title: 三次函数单调区间及局部极值
+chapter: 函数与导数
+topics:
+- K-FUN-MONO
+- K-FUN-EXTREMA
+methods:
+- M-DERIV-SIGN
+archetypes:
+- A-FUN-08
+type: solution
+difficulty: 3
+level: intermediate
+review_status: draft
+source:
+  kind: self_written
+  citation: V1.0 手写示范题迁移（非新增数学题）
+  permission: self_authored
+  note: 保留原讲义示范例题内容，未经过独立数学人工审稿。

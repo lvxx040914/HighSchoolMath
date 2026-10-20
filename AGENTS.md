@@ -26,3 +26,12 @@
 - 函数单调性讲义新母题统一通过 `\showworked{HSM-*}` 读取题库，禁止再为同一母题复制另一份解答。
 - 修改 `config/monotonicity.yml` 时，训练题与示范母题集合必须互斥。
 - 每次 PDF 编译后运行 `python tools/verify_pdf.py`；所有题目仍标记 `draft`，不因自动化通过而升级审稿等级。
+
+
+## V1.3 附加约束
+
+- 讲义正文只编写知识、证明和方法解释；完整例题用独立 `questions/<ID>/` 引用（包括 `stem.tex` / `solution.tex` / `answer.tex`），禁止把整套示范例题直接重新写进正文。
+- 构建四种输出，学生用习题册和速查答案绝不可包含教师版完整解答；修改后应运行 `make check && make build && make pdfcheck`。
+- macOS / Linux XeLaTeX 必须使用字体回退，补丁和压缩包必须使用 ASCII 英文文件名。
+- 自动组卷应有固定随机种子、明确数量及缺题报错，题库数不足不得重复或假造题目。
+- 不要自动更改 `draft` 审核等级；新增题目要记录来源授权和课程范围。
