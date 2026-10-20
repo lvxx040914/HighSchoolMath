@@ -1,5 +1,5 @@
 PYTHON ?= python3
-.PHONY: validate test generate student teacher build clean
+.PHONY: validate catalog check report test generate student teacher build clean
 
 validate:
 	$(PYTHON) tools/validate.py
@@ -21,3 +21,15 @@ build:
 
 clean:
 	latexmk -C -outdir=dist tex/student.tex tex/teacher.tex
+
+catalog:
+	$(PYTHON) tools/render_catalog.py
+
+report:
+	$(PYTHON) tools/report_catalog.py
+
+check:
+	$(PYTHON) tools/validate.py
+	$(PYTHON) tools/validate_catalog.py
+	$(PYTHON) tools/render_catalog.py --check
+	$(PYTHON) -m unittest discover -s tests -v

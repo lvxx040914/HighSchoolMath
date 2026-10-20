@@ -35,3 +35,18 @@ questions/HSM-FUN-0001/
 ## 兼容与变更
 
 元数据键名稳定，未来增加字段应提供默认值；需要重命名/删字段时，先升 schema_version 再执行迁移脚本；发布题目编号不得重用。
+
+## V1.1 扩展：题型目录关联（向后兼容）
+
+新题目建议在原有 `metadata.yml` 中新增：
+
+```yaml
+archetypes:
+  - A-FUN-04
+```
+
+- `archetypes` 是 **可选的字符串列表**：旧题无需迁移便可继续编译，已有 10 道示例题现已添加关联。
+- `A-*` 引用 `catalog/archetypes.yml`，其中的 `topics` / `methods` 采用 V1.1 规划 ID `T-*`、`MT-*`。
+- 原题中的 `topics: [K-*]` 与 `methods: [M-*]` **不改动**。V1.1 目录用 `legacy_knowledge_ids`、`legacy_method_id` 与 V1.0 实体建立别名映射。
+- 禁止自动把 `draft` 改为 `math_checked` 或 `published`。
+- `python tools/validate_catalog.py` 校验双向引用、旧实体别名、目录循环依赖和题型 ID。

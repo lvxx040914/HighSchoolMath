@@ -9,3 +9,7 @@
 7. 在 PR 中列出新增题目的 ID、来源授权、独立复算记录、学生/教师版页面截图；未经人工复核的题保持 `draft`。
 
 单人初期开发时仍要区分「脚本验证通过」与「独立审稿通过」。任何数学内容更新应由独立复算或详细反例测试佐证。
+
+## V1.1 协作流程
+
+先读 `AGENTS.md` 与 `docs/EDITORIAL_STANDARD_V1_1.md`。目录条目只编辑 `catalog/*.yml`，然后执行 `python tools/render_catalog.py` 并提交同步更新的 `docs/*ATLAS.md`。新增题目建议填写 `archetypes`，审稿状态保留 `draft`，人工复核后再升级。每个 PR 应附本次涉及的知识点/方法/题型 ID 及测试命令。

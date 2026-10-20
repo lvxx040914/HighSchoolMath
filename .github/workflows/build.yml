@@ -12,6 +12,8 @@ jobs:
           python-version: '3.11'
       - run: pip install -r requirements.txt
       - run: python tools/validate.py
+      - run: python tools/validate_catalog.py
+      - run: python tools/render_catalog.py --check
       - run: python -m unittest discover -s tests -v
       - run: sudo apt-get update && sudo apt-get install -y texlive-xetex texlive-lang-chinese texlive-latex-extra texlive-fonts-recommended fonts-noto-cjk fonts-liberation latexmk
       - run: python tools/build.py --edition all

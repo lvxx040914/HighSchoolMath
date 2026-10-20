@@ -17,3 +17,5 @@ source:
   citation: 本项目教学示例自拟
   permission: self_authored
   note: 根据高中数学常见问题类型独立编写，尚待人工数学与版权审校。
+archetypes:
+- A-FUN-08
